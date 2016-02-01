@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "name": "usda-ux-challenge",
   "version": "1.0.0",
   "description": "A submission for USDA UX Challenge. Prototype form for USDA free school lunch program.",
+=======
+  "name": "react-transform-boilerplate",
+  "version": "1.0.0",
+  "description": "A new Webpack boilerplate with hot reloading React components, and error handling on module and component level.",
+>>>>>>> 9d1283daa2c4f148831f4d65037d67dfcbe120ae
   "scripts": {
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
@@ -11,11 +17,16 @@
   },
   "repository": {
     "type": "git",
+<<<<<<< HEAD
     "url": "git+https://github.com/umgauper/USDA-UX-Challenge.git"
+=======
+    "url": "https://github.com/gaearon/react-transform-boilerplate.git"
+>>>>>>> 9d1283daa2c4f148831f4d65037d67dfcbe120ae
   },
   "keywords": [
     "react",
     "reactjs",
+<<<<<<< HEAD
     "USDA",
     "devpost"
   ],
@@ -25,6 +36,24 @@
     "url": "https://github.com/umgauper/USDA-UX-Challenge/issues"
   },
   "homepage": "",
+=======
+    "boilerplate",
+    "hot",
+    "reload",
+    "hmr",
+    "live",
+    "edit",
+    "webpack",
+    "babel",
+    "react-transform"
+  ],
+  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/gaearon/react-transform-boilerplate/issues"
+  },
+  "homepage": "https://github.com/gaearon/react-transform-boilerplate",
+>>>>>>> 9d1283daa2c4f148831f4d65037d67dfcbe120ae
   "devDependencies": {
     "babel-core": "^6.3.15",
     "babel-eslint": "^5.0.0-beta4",
@@ -46,6 +75,10 @@
   "dependencies": {
     "react": "^0.14.3",
     "react-dom": "^0.14.3"
+<<<<<<< HEAD
   },
   "main": "devServer.js"
+=======
+  }
+>>>>>>> 9d1283daa2c4f148831f4d65037d67dfcbe120ae
 }
