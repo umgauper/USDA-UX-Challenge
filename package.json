@@ -1,15 +1,15 @@
 {
   "name": "usdaUxChallenge",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A submission for USDA UX Challenge. Prototype form for USDA free school lunch program.",
   "scripts": {
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
-    "dev": "node devServer.js",
-    "start": "node server/server.js",
+    "dev": "NODE_ENV=development node devServer.js",
+    "start": "NODE_ENV=production node server.js",
     "lint": "eslint src",
-    "postinstall": "webpack --config ./webpack-prod.config.js --progress --colors"
+    "postinstall": "webpack --config ./webpack.config.prod.js --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -41,13 +41,14 @@
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
     "rimraf": "^2.4.3",
-    "webpack": "^1.12.9",
+    "path":"^0.11.14",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
     "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "react-dom": "^0.14.3",
+    "webpack": "^1.12.9"
   },
   "main": "devServer.js"
 }
