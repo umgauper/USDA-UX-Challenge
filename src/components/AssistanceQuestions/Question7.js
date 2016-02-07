@@ -27,6 +27,7 @@ export default class Question7 extends Component {
 	}
 
 
-
+//TODO: test local npm build & npm start, get links working on Heroku
+//Then, fill out income section 
 
 }
