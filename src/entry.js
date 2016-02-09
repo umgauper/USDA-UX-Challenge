@@ -1,29 +1,30 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from './components/App';
-import Children from './components/Children';
-import Assistance from './components/Assistance';
-import ChildIncome from './components/ChildIncome';
-import AdultIncome from './components/AdultIncome';
-import Contact from './components/Contact';
+import React from 'react'
+import { render } from 'react-dom'
+import App from './components/App'
+import Children from './components/Children'
+import Assistance from './components/Assistance'
+import ChildIncome from './components/ChildIncome'
+import AdultIncome from './components/AdultIncome'
+import Contact from './components/Contact'
 import Question1Container from './containers/Question1Container'
-import Question1 from './components/ChildrenQuestions/Question1';
-import Question2 from './components/ChildrenQuestions/Question2';
-import Question3 from './components/ChildrenQuestions/Question3';
-import Question4 from './components/ChildrenQuestions/Question4';
-import Question5 from './components/ChildrenQuestions/Question5';
-import Question6 from './components/ChildrenQuestions/Question6';
-import Question7 from './components/AssistanceQuestions/Question7';
-import Question8 from './components/ChildIncomeQuestions/Question8';
-import Question9 from './components/ChildIncomeQuestions/Question9';
-import Question10 from './components/ChildIncomeQuestions/Question10';
-import Question11 from './components/ChildIncomeQuestions/Question11';
-import Question12 from './components/AdultIncomeQuestions/Question12';
-import Question13 from './components/AdultIncomeQuestions/Question13';
-import Question14 from './components/AdultIncomeQuestions/Question14';
-import Question15 from './components/AdultIncomeQuestions/Question15';
-import Question16 from './components/AdultIncomeQuestions/Question16';
-import Question17 from './components/AdultIncomeQuestions/Question17';
+import namesList from './containers/namesList'
+import Question1 from './components/ChildrenQuestions/Question1'
+import Question2 from './components/ChildrenQuestions/Question2'
+import Question3 from './components/ChildrenQuestions/Question3'
+import Question4 from './components/ChildrenQuestions/Question4'
+import Question5 from './components/ChildrenQuestions/Question5'
+import Question6 from './components/ChildrenQuestions/Question6'
+import Question7 from './components/AssistanceQuestions/Question7'
+import Question8 from './components/ChildIncomeQuestions/Question8'
+import Question9 from './components/ChildIncomeQuestions/Question9'
+import Question10 from './components/ChildIncomeQuestions/Question10'
+import Question11 from './components/ChildIncomeQuestions/Question11'
+import Question12 from './components/AdultIncomeQuestions/Question12'
+import Question13 from './components/AdultIncomeQuestions/Question13'
+import Question14 from './components/AdultIncomeQuestions/Question14'
+import Question15 from './components/AdultIncomeQuestions/Question15'
+import Question16 from './components/AdultIncomeQuestions/Question16'
+import Question17 from './components/AdultIncomeQuestions/Question17'
 
 import Router, { Route, Link, IndexRoute, browserHistory } from 'react-router';
 
@@ -50,7 +51,7 @@ render(
 				<Route path="children" component={Children}>
 					<Route path="1" component={Question1Container}/>
 					<Route path="2" component={Question2}/>
-					<Route path="3" component={Question3}/>
+					<Route path="3" component={namesList}/>
 					<Route path="4" component={Question4}/>
 					<Route path="5" component={Question5}/>
 					<Route path="6" component={Question6}/>

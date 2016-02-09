@@ -11,12 +11,10 @@ export default class Question3 extends Component {
 		return (
 			<div>
 				<h6>{question}</h6>
-				<div>Click</div>
+				{this.props.names.map((el)=> {
+					return <p>{el.first}</p>
+				})}
 			</div>
 			)
 	}
-
-
-
-
 }

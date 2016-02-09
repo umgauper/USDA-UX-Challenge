@@ -20,9 +20,4 @@ export default class Children extends Component {
 			</div>
 			)
 	}
-
-
-
-
-
 }
