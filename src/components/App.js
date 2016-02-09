@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import { NICE, SUPER_NICE } from './../colors';
-import { Link } from 'react-router';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 export default class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {

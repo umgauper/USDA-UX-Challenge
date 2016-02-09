@@ -6,6 +6,7 @@ import Assistance from './components/Assistance';
 import ChildIncome from './components/ChildIncome';
 import AdultIncome from './components/AdultIncome';
 import Contact from './components/Contact';
+import Question1Container from './containers/Question1Container'
 import Question1 from './components/ChildrenQuestions/Question1';
 import Question2 from './components/ChildrenQuestions/Question2';
 import Question3 from './components/ChildrenQuestions/Question3';
@@ -24,19 +25,35 @@ import Question15 from './components/AdultIncomeQuestions/Question15';
 import Question16 from './components/AdultIncomeQuestions/Question16';
 import Question17 from './components/AdultIncomeQuestions/Question17';
 
-
 import Router, { Route, Link, IndexRoute, browserHistory } from 'react-router';
 
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import usdaApp from './reducers';
+import { addChildNames } from './actions';
+
+let store = createStore(usdaApp);
+
+
+// testing...
+//get initial state:
+console.log(store.getState());
+store.dispatch(addChildNames([{"first": "Una", "MI": "M", "last": "Gauper"}])); //works!!
+console.log(store.getState());
+
+
+
 render(
-	<Router history={browserHistory}>
-		<Route path="/" component={App}>
-			<Route path="children" component={Children}>
-				<Route path="1" component={Question1}/>
-				<Route path="2" component={Question2}/>
-				<Route path="3" component={Question3}/>
-				<Route path="4" component={Question4}/>
-				<Route path="5" component={Question5}/>
-				<Route path="6" component={Question6}/>
+	<Provider store={store}>
+		<Router history={browserHistory}>
+			<Route path="/" component={App}>
+				<Route path="children" component={Children}>
+					<Route path="1" component={Question1Container}/>
+					<Route path="2" component={Question2}/>
+					<Route path="3" component={Question3}/>
+					<Route path="4" component={Question4}/>
+					<Route path="5" component={Question5}/>
+					<Route path="6" component={Question6}/>
 			</Route>
 			<Route path="assistance" component={Assistance}>
 				<Route path="7" component={Question7}/>
@@ -57,9 +74,11 @@ render(
 		    </Route>
 
 		    <Route path="contact" component={Contact}/>
-		</Route>
-	</Router>
+			</Route>
+		</Router>
+	</Provider>
 
 
 
  	, document.getElementById('root'));
+//TODO: use react-router-redux ??
