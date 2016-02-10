@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
+import ChildInfoQuestion from './ChildInfoQuestion'
 
 export default class Question3 extends Component {
 	constructor(props) {
 		super(props);
 	}
 
+	
 	render() {
-		let question = 'For each child, please indicate if he/she is a student at [...]:';
-
-		return (
-			<div>
-				<h6>{question}</h6>
-				{this.props.names.map((el)=> {
-					return <p>{el.first}</p>
-				})}
-			</div>
-			)
+		let question = 'Is ... a student at Wheatland Elementary'
+		return (<ChildInfoQuestion 
+					onYesClick={this.props.onYesClickStudent} 
+					onNoClick={this.props.onNoClickStudent}
+					question={question}
+					names={this.props.names}
+						/>)
 	}
 }
