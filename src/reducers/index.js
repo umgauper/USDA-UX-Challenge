@@ -1,20 +1,41 @@
-import { ADD_CHILD_NAMES, UPDATE_CHILD_INFO } from '../actions';
-import { combineReducers } from 'redux';
+import { ADD_CHILD_NAMES, UPDATE_CHILD_INFO, UPDATE_CHILD_INCOME } from '../actions'
+import { combineReducers } from 'redux'
+import update from 'react-addons-update'
 
 const initialState = {
-	namesArray: []
+	namesArray: [],
+	firstNamesArray: []
 }
 
 const appState = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_CHILD_NAMES:
-			return Object.assign({}, state, {namesArray: Array.concat(state.namesArray, action.namesArray)})
-		case UPDATE_CHILD_INFO: //change to UPDATE student info, action creator should take 'isStudent', 'isMigrant', as argument
-			return 	Object.assign({}, state, {namesArray: [...state.namesArray.slice(0, action.index), 
+			return update(state, {
+				namesArray: { 
+					$set: Array.concat(state.namesArray, action.namesArray) 
+				},
+				firstNamesArray: { 
+					$set: Array.concat(state.firstNamesArray, action.firstNamesArray) 
+				}
+			})
+
+		case UPDATE_CHILD_INFO: //TODO: refactor Object.assign to use upate syntax
+			return update(state, {
+				namesArray: {
+					$set: [...state.namesArray.slice(0, action.index), 
 								Object.assign({}, state.namesArray[action.index], action.childInfo),
 								...state.namesArray.slice(action.index + 1)]
-								})
+				}
+			})
 
+		case UPDATE_CHILD_INCOME:
+			return update(state, {
+				namesArray: {
+					$set: [...state.namesArray.slice(0, action.index), 
+								Object.assign({}, state.namesArray[action.index], action.childIncomeInfo),
+								...state.namesArray.slice(action.index + 1)]
+				}
+			})
 				
 		default:
 			return state
@@ -22,9 +43,6 @@ const appState = (state = initialState, action) => {
 
 }
 
-//var newState = Object.assign({}, childname, 
-	// {namesArray : [...childname.namesArray.slice(0, 1), 
-		// Object.assign({}, childname.namesArray[1], { isStudent: true}), ...childname.namesArray.slice(1+1)] }) 
 
 const usdaApp = combineReducers({
 	appState

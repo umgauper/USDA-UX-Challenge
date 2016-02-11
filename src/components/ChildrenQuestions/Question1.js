@@ -23,11 +23,15 @@ export default class Question1 extends Component {
 		}
 
 		let updateMiddleInitial = (e, i) => {
-			//namesArray[i].MI = e.target.value
+			let newNamesArray = this.state.namesArray
+			newNamesArray[i].MI = e.target.value
+			this.setState({namesArray: newNamesArray})
 		}
 
 		let updateLastName = (e, i) => {
-			//namesArray[i].last = e.target.value
+			let newNamesArray = this.state.namesArray
+			newNamesArray[i].last = e.target.value
+			this.setState({namesArray: newNamesArray})
 		}
 
 		
@@ -39,10 +43,14 @@ export default class Question1 extends Component {
 			console.log('names array: ', this.state.namesArray)
 		}
 
-		let handleClick = (e, namesArray)=> {
+		let handleClick = (e, namesArray) => {
 			e.stopPropagation()
 			alert("fiiiring")
-			this.props.onNextClick(namesArray)
+			let firstNamesArray = namesArray.map( (el) => { 	//TODO: It might be better to move firstNamesArray creation into the action creator?
+																//so calling the addChildNames dispatch from somewhere else doesn't mess up the name index mapping
+				return el.first
+			})
+			this.props.onNextClick(namesArray, firstNamesArray)
 		}
 
 		return (
@@ -57,8 +65,8 @@ export default class Question1 extends Component {
 				 		let j = i
 				 		inputsArr.push(<div>
 									<input onChange={(e) => updateFirstNames(e, j)} type="text" />
-									<input type="text" maxLength={1} />
-									<input type="text" />
+									<input onChange={(e) => updateMiddleInitial(e, j)} type="text" maxLength={1} />
+									<input onChange={(e) => updateLastName(e, j)} type="text" />
 								</div>)
 				 		i++
 				 		}

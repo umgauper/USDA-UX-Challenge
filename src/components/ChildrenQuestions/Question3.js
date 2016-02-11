@@ -10,8 +10,8 @@ export default class Question3 extends Component {
 	render() {
 		let question = 'Is ... a student at Wheatland Elementary'
 		return (<ChildInfoQuestion 
-					onYesClick={this.props.onYesClickStudent} 
-					onNoClick={this.props.onNoClickStudent}
+					onYesClick={this.props.onChildInfoClick.bind(null, {isStudent: true})} 
+					onNoClick={this.props.onChildInfoClick.bind(null, {isStudent: false})}
 					question={question}
 					names={this.props.names}
 						/>)

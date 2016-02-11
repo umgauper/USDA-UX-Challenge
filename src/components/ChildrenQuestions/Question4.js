@@ -10,8 +10,8 @@ export default class Question4 extends Component {
 		let question = 'For each child, please indicate if he/she is a foster child:';
 
 		return (<ChildInfoQuestion 
-					onYesClick={this.props.onYesClickFoster} 
-					onNoClick={this.props.onNoClickFoster}
+					onYesClick={this.props.onChildInfoClick.bind(null, {isFoster: true})} 
+					onNoClick={this.props.onChildInfoClick.bind(null, {isFoster: false})}
 					question={question}
 					names={this.props.names}
 						/>)

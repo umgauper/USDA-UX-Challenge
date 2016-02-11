@@ -6,8 +6,8 @@ import Question1 from '../components/ChildrenQuestions/Question1'
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onNextClick: (namesArray) => {
-			dispatch(addChildNames(namesArray))
+		onNextClick: (namesArray, firstNamesArray) => {
+			dispatch(addChildNames(namesArray, firstNamesArray))
 		}
 	}
 }

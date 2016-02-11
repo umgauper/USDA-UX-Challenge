@@ -4,58 +4,33 @@
 
 export const ADD_CHILD_NAMES = 'ADD_CHILD_NAMES'
 export const UPDATE_CHILD_INFO = 'UPDATE_CHILD_INFO'
+export const UPDATE_CHILD_INCOME = 'UPDATE_CHILD_INCOME'
 
 /*
  * action creators
  */
  
-export const addChildNames = (namesArray) => {
+export const addChildNames = (namesArray, firstNamesArray) => {
 	return {
 		type: ADD_CHILD_NAMES,
-		namesArray: namesArray
+		namesArray,
+		firstNamesArray
 	}
 }
 
-export const updateIsStudent = (index, bool) => {
+export const updateChildInfo = (childInfo, index) => {
 	return {
 		type: UPDATE_CHILD_INFO,
 		index: index,
-		childInfo: {
-			isStudent: bool
-		}
+		childInfo
 	}
-
 }
 
-export const updateIsFoster= (index, bool) => {
+export const updateChildIncome = (index, childIncomeInfo) => {
 	return {
-		type: UPDATE_CHILD_INFO,
+		type: UPDATE_CHILD_INCOME,
 		index: index,
-		childInfo: {
-			isFoster: bool
-		}
-	}
-
-}
-
-export const updateIsMigrant = (index, bool) => {
-	return {
-		type: UPDATE_CHILD_INFO,
-		index: index,
-		childInfo: {
-			isMigrant: bool
-		}
-	}
-
-}
-
-export const updateIsHeadStart = (index, bool) => {
-	return {
-		type: UPDATE_CHILD_INFO,
-		index: index,
-		childInfo: {
-			isHeadStart: bool
-		}
+		childIncomeInfo
 	}
 
 }
