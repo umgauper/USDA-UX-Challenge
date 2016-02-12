@@ -1,26 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import ChildIncomeQuestion from './ChildIncomeQuestion'
 
-export default class Question11 extends Component {
+export default class Question8 extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
+	}
+
+	shouldComponentUpdate() {
+		return false
 	}
 
 	render() {
-		let question = 'Does child[n] regularly receive  spending money or other income from a person outside the household such as an extended family member or friend?';
-
-		// IF "yes", THEN: Please click the + button below and answer the questions for each income source the child receives from a person outside the household. (each + genreates [drop down: family, friend] [income input box] + 
-		//[vertical buttons: (see prev. question)
-		////<div>Weekly</div>
-		//<div>Two times a week</div>
-		//<div>Two times a month</div>
-		//<div>Once a month</div>
-		//TODO: ^^ put frequency divs in own component
+		let question = "Does child[n] regularly receive spending money or other income from a person outside the household such as an extended family member or friend?"
+		let incomeCategory = 'spendingMoney'
+		
 
 		return (
-			<div>
-				<h6>{question}</h6>
-				<div>Click</div>
-			</div>
+			<ChildIncomeQuestion
+				question={question}
+				incomeCategory={incomeCategory}
+				names={this.props.names}
+				onNextClick={this.props.onChildInfoClick}
+			/>
 			)
 	}
 

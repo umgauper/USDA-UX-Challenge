@@ -1,25 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import ChildIncomeQuestion from './ChildIncomeQuestion'
 
 export default class Question9 extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
+	}
+
+	shouldComponentUpdate() {
+		return false
 	}
 
 	render() {
-		let question = 'Does child[n] receive Social Security benefits for the childs own blindness or disability?';
-
-		//IF “yes” THEN How much earnings? [input box] How often are earnings received?
-		//<div>Weekly</div>
-		//<div>Two times a week</div>
-		//<div>Two times a month</div>
-		//<div>Once a month</div>
-
+		let question = "Does child[n] receive Social Security benefits for the child's own blindness or disability?"
+		let incomeCategory = 'socialSecurityOwn'
+		
 
 		return (
-			<div>
-				<h6>{question}</h6>
-				<div>Click</div>
-			</div>
+			<ChildIncomeQuestion
+				question={question}
+				incomeCategory={incomeCategory}
+				names={this.props.names}
+				onNextClick={this.props.onChildInfoClick}
+			/>
 			)
 	}
 

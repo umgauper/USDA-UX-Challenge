@@ -49,10 +49,10 @@ export default class ChildIncomeQuestion extends Component {
 					return (<div> 
 								<p>{question}</p>
 								<p>{el}</p>
-								<input type="radio" value="weekly" onClick={(e) => {radioClickHandler(e)}}/>
-								<input type="radio" value="twiceweekly" onClick={(e) => {radioClickHandler(e)}}/>
-								<input type="radio" value="monthly" onClick={(e) => {radioClickHandler(e)}}/>
-								<input type="radio" value="twicemonthly" onClick={(e) => {radioClickHandler(e)}}/>
+								<input type="radio" value="weekly" name="frequency" onClick={(e) => {radioClickHandler(e)}}/>
+								<input type="radio" value="twiceweekly" name="frequency" onClick={(e) => {radioClickHandler(e)}}/>
+								<input type="radio" value="monthly" name="frequency" onClick={(e) => {radioClickHandler(e)}}/>
+								<input type="radio" value="twicemonthly" name="frequency" onClick={(e) => {radioClickHandler(e)}}/>
 								<input type="text" name="amt" onChange={(e) => {inputChangeHandler(e)}}/>
 								<button onClick={ () => {clickHandler(i)} }>NEXT</button>
 							</div>

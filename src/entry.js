@@ -36,10 +36,10 @@ let store = createStore(usdaApp)
 // testing...
 //get initial state:
 console.log(store.getState());
-store.dispatch(addChildNames([{"first": "Una", "MI": "M", "last": "Gauper"}], ["UNA", "INMEE", "AIDAN"])); //works!!
+// store.dispatch(addChildNames([{"first": "Una", "MI": "M", "last": "Gauper"}], ["UNA", "INMEE", "AIDAN"])); //works!!
 // store.dispatch(updateChildInfo({isStudent: true}, 0))
 // store.dispatch(updateChildIncome(0, {wages: {fqcy: 0, amt: 100}}))
-console.log(store.getState());
+// console.log(store.getState());
 
 
 
@@ -58,6 +58,9 @@ render(
 				</Route>
 				<Route path="childIncome" component={ChildIncome}>
 					<Route path="8" component={Question8Container}/>
+					<Route path="9" component={Question9Container}/>
+					<Route path="10" component={Question10Container}/>
+					<Route path="11" component={Question11Container}/>
 				</Route>
 			</Route>
 		</Router>
