@@ -1,4 +1,4 @@
-import { ADD_CHILD_NAMES, UPDATE_CHILD_INFO, UPDATE_CHILD_INCOME } from '../actions'
+import { ADD_CHILD_NAMES, UPDATE_CHILD_INFO } from '../actions'
 import { combineReducers } from 'redux'
 import update from 'react-addons-update'
 
@@ -24,15 +24,6 @@ const appState = (state = initialState, action) => {
 				namesArray: {
 					$set: [...state.namesArray.slice(0, action.index), 
 								Object.assign({}, state.namesArray[action.index], action.childInfo),
-								...state.namesArray.slice(action.index + 1)]
-				}
-			})
-
-		case UPDATE_CHILD_INCOME:
-			return update(state, {
-				namesArray: {
-					$set: [...state.namesArray.slice(0, action.index), 
-								Object.assign({}, state.namesArray[action.index], action.childIncomeInfo),
 								...state.namesArray.slice(action.index + 1)]
 				}
 			})

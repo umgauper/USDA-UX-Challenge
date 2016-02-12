@@ -6,14 +6,18 @@ export default class Question6 extends Component {
 		super(props)
 	}
 
+	shouldComponentUpdate() {
+		return false
+	}
+
 	render() {
 		let question = 'For each child, please indicate if he/she is a Head Start participant:'
 		//console.log(this.props.store.getState())
 
 		return (
 			 <ChildInfoQuestion 
-					onYesClick={this.props.onYesClickHeadStart} 
-					onNoClick={this.props.onNoClickHeadStart}
+					onYesClick={this.props.onChildInfoClick.bind(null, {isHeadStart: true}) }
+					onNoClick={this.props.onChildInfoClick.bind(null, {isHeadStart: false}) }
 					question={question}
 					names={this.props.names}
 						/>

@@ -6,6 +6,9 @@ export default class Question3 extends Component {
 		super(props);
 	}
 
+	shouldComponentUpdate() {
+		return false
+	}
 	
 	render() {
 		let question = 'Is ... a student at Wheatland Elementary'

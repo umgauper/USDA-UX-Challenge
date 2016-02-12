@@ -6,6 +6,10 @@ export default class Question4 extends Component {
 		super(props);
 	}
 
+	shouldComponentUpdate() {
+		return false
+	}
+	
 	render() {
 		let question = 'For each child, please indicate if he/she is a foster child:';
 

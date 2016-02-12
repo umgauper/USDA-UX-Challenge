@@ -77,7 +77,7 @@ export default class Question1 extends Component {
 
 				<Link to="children/2">
 					<button 
-						onClick={(e)=> { handleClick(e, this.state.namesArray)}}>
+						onClick={(e)=> { handleClick(e, this.state.namesArray) } }>
 						NEXT
 					</button>
 				</Link>

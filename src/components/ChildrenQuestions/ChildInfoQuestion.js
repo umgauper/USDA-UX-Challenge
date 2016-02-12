@@ -5,6 +5,10 @@ export default class ChildInfoQuestion extends Component {
 		super(props);
 	}
 
+	shouldComponentUpdate() {
+		return false
+	}
+	
 	render() {
 		let question = this.props.question
 

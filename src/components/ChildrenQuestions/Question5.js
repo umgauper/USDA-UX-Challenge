@@ -3,7 +3,11 @@ import ChildInfoQuestion from './ChildInfoQuestion'
 
 export default class Question5 extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
+	}
+
+	shouldComponentUpdate() {
+		return false
 	}
 
 	render() {

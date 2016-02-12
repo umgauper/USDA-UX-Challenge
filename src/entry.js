@@ -7,18 +7,15 @@ import ChildIncome from './components/ChildIncome'
 import AdultIncome from './components/AdultIncome'
 import Contact from './components/Contact'
 import Question1Container from './containers/Question1Container'
-import { Question3Container, Question4Container, Question5Container, Question6Container } from './containers/childInfoContainers'
+import { Question3Container, Question4Container, Question5Container, Question6Container,
+		 Question8Container, Question9Container, Question10Container, Question11Container} from './containers/childInfoContainers'
 import Question1 from './components/ChildrenQuestions/Question1'
 import Question2 from './components/ChildrenQuestions/Question2'
 import Question3 from './components/ChildrenQuestions/Question3'
 // import Question4 from './components/ChildrenQuestions/Question4'
 import Question5 from './components/ChildrenQuestions/Question5'
 import Question6 from './components/ChildrenQuestions/Question6'
-import Question7 from './components/AssistanceQuestions/Question7'
 import Question8 from './components/ChildIncomeQuestions/Question8'
-import Question9 from './components/ChildIncomeQuestions/Question9'
-import Question10 from './components/ChildIncomeQuestions/Question10'
-import Question11 from './components/ChildIncomeQuestions/Question11'
 import Question12 from './components/AdultIncomeQuestions/Question12'
 import Question13 from './components/AdultIncomeQuestions/Question13'
 import Question14 from './components/AdultIncomeQuestions/Question14'
@@ -40,9 +37,10 @@ let store = createStore(usdaApp)
 //get initial state:
 console.log(store.getState());
 store.dispatch(addChildNames([{"first": "Una", "MI": "M", "last": "Gauper"}], ["UNA", "INMEE", "AIDAN"])); //works!!
-store.dispatch(updateChildInfo({isStudent: true}, 0))
+// store.dispatch(updateChildInfo({isStudent: true}, 0))
 // store.dispatch(updateChildIncome(0, {wages: {fqcy: 0, amt: 100}}))
 console.log(store.getState());
+
 
 
 
@@ -57,31 +55,58 @@ render(
 					<Route path="4" component={Question4Container}/>
 					<Route path="5" component={Question5Container}/>
 					<Route path="6" component={Question6Container}/>
-			</Route>
-			<Route path="assistance" component={Assistance}>
-				<Route path="7" component={Question7}/>
-			</Route>
-		    <Route path="childIncome" component={ChildIncome}>
-		    	<Route path="8" component={Question8}/>
-		    	<Route path="9" component={Question9}/>
-		    	<Route path="10" component={Question10}/>
-		    	<Route path="11" component={Question11}/>
-	    	</Route>
-		    <Route path="adultIncome" component={AdultIncome}>
-		    	<Route path="12" component={Question12}/>
-		    	<Route path="13" component={Question13}/>
-		    	<Route path="14" component={Question14}/>
-		    	<Route path="15" component={Question15}/>
-		    	<Route path="16" component={Question16}/>
-		    	<Route path="17" component={Question17}/>
-		    </Route>
-
-		    <Route path="contact" component={Contact}/>
+				</Route>
+				<Route path="childIncome" component={ChildIncome}>
+					<Route path="8" component={Question8Container}/>
+				</Route>
 			</Route>
 		</Router>
-	</Provider>
+	</Provider>, document.getElementById('root')
+
+	)
+// render(
+// 	// <Question8/>
+// 		// <Children>
+// 			// <Question8/>
+// 		// </Children>
+// 	// </App>
+// 	<Provider store={store}>
+// 		// <App/>
+// 		<Router history={browserHistory}>
+// 			<Route path="/" component={App}>
+// 				<Route path="children" component={Children}/>
+// 	// 				<Route path="1" component={Question1Container}/>
+// 	// 				<Route path="2" component={Question2}/>
+// 	// 				<Route path="3" component={Question3Container}/>
+// 	// 				<Route path="4" component={Question4Container}/>
+// 	// 				<Route path="5" component={Question5Container}/>
+// 	// 				<Route path="6" component={Question6Container}/>
+// 				// </Route>
+// 			</Route>
+// 	// 		<Route path="assistance" component={Assistance}>
+// 	// 			<Route path="7" component={Question7}/>
+// 	// 		</Route>
+// 	// 	    <Route path="childIncome" component={ChildIncome}>
+// 	// 	    	<Route path="8" component={Question8Container}/>
+// 	// 	    	<Route path="9" component={Question9Container}/>
+// 	// 	    	<Route path="10" component={Question10Container}/>
+// 	// 	    	<Route path="11" component={Question11Container}/>
+// 	//     	</Route>
+// 	// 	    <Route path="adultIncome" component={AdultIncome}>
+// 	// 	    	<Route path="12" component={Question12}/>
+// 	// 	    	<Route path="13" component={Question13}/>
+// 	// 	    	<Route path="14" component={Question14}/>
+// 	// 	    	<Route path="15" component={Question15}/>
+// 	// 	    	<Route path="16" component={Question16}/>
+// 	// 	    	<Route path="17" component={Question17}/>
+// 	// 	    </Route>
+
+// 	// 	    <Route path="contact" component={Contact}/>
+// 	// 		</Route>
+// 		</Router>
+// 	</Provider>
 
 
 
- 	, document.getElementById('root'));
+ 	// , document.getElementById('root'));
 //TODO: use react-router-redux ??
