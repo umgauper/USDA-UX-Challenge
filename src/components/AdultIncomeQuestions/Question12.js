@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-export default class Question1 extends Component {
+export default class Question12 extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			numberOfChildren: 1,
+			numberOfAdults: 1,
 			namesArray: [{first: '', last: ''}]
 		}
 	}
@@ -16,12 +16,10 @@ export default class Question1 extends Component {
 		let updateFirstNames = (e, i) => {
 			e.preventDefault()
 			console.log('first name updating', e.target.value, 'i: ', i)
-			//let first = e.target.value
 			let newNamesArray = this.state.namesArray
 			newNamesArray[i].first = e.target.value
 			this.setState({namesArray: newNamesArray})
 		}
-
 
 		let updateLastName = (e, i) => {
 			let newNamesArray = this.state.namesArray
@@ -32,9 +30,9 @@ export default class Question1 extends Component {
 		
 		let addInputField = () => {
 			let newNamesArray = this.state.namesArray
-			newNamesArray.push({first: '', MI: '', last: ''})
+			newNamesArray.push({first: '', last: ''})
 			this.setState({namesArray: newNamesArray})
-			this.setState({numberOfChildren: ++this.state.numberOfChildren})
+			this.setState({numberOfAdults: ++this.state.numberOfAdults})
 			console.log('names array: ', this.state.namesArray)
 		}
 
@@ -45,7 +43,7 @@ export default class Question1 extends Component {
 																//so calling the addChildNames dispatch from somewhere else doesn't mess up the name index mapping
 				return el.first
 			})
-			this.props.onNextClick(namesArray, firstNamesArray)
+			this.props.onQuestion12NextClick(namesArray, firstNamesArray)
 		}
 
 		return (
