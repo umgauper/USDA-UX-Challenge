@@ -36,10 +36,7 @@ export default class ChildIncomeQuestion extends Component {
 
 		let clickHandler = (i) => {
 			console.log(makeChildIncomeObject())
-			//this.props.onNextClick({wages: {amt: 0, frequency: 1000}}, i)
 			this.props.onNextClick(makeChildIncomeObject(), i)
-
-
 		}
 
 		return (

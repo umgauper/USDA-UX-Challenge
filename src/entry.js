@@ -9,6 +9,8 @@ import Contact from './components/Contact'
 import Question1Container from './containers/Question1Container'
 import { Question3Container, Question4Container, Question5Container, Question6Container,
 		 Question8Container, Question9Container, Question10Container, Question11Container} from './containers/childInfoContainers'
+import { Question12Container, Question13Container, Question14Container, Question15Container, Question16Container,
+		 Question17Container } from './containers/adultInfoContainers'
 import Question1 from './components/ChildrenQuestions/Question1'
 import Question2 from './components/ChildrenQuestions/Question2'
 import Question3 from './components/ChildrenQuestions/Question3'
@@ -28,7 +30,7 @@ import Router, { Route, Link, IndexRoute, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import usdaApp from './reducers'
-import { addChildNames, updateChildInfo } from './actions'
+import { addChildNames, updateChildInfo, addAdultNames, updateAdultInfo } from './actions'
 
 let store = createStore(usdaApp)
 
@@ -39,7 +41,9 @@ console.log(store.getState());
 // store.dispatch(addChildNames([{"first": "Una", "MI": "M", "last": "Gauper"}], ["UNA", "INMEE", "AIDAN"])); //works!!
 // store.dispatch(updateChildInfo({isStudent: true}, 0))
 // store.dispatch(updateChildIncome(0, {wages: {fqcy: 0, amt: 100}}))
-// console.log(store.getState());
+store.dispatch(addAdultNames([{first: "maree", last: "gauper"}, {first: "bob", last: "gauper"}], ["maree", "bob"]))
+store.dispatch(updateAdultInfo({wages: {fqcy: 100, amt: 1000}}, 1))
+console.log(store.getState());
 
 
 
@@ -61,6 +65,14 @@ render(
 					<Route path="9" component={Question9Container}/>
 					<Route path="10" component={Question10Container}/>
 					<Route path="11" component={Question11Container}/>
+				</Route>
+				<Route path="adultIncome" component={AdultIncome}>
+					<Route path="12" component={Question12Container}/>
+					<Route path="13" component={Question13Container}/>
+					<Route path="14" component={Question14Container}/>
+					<Route path="15" component={Question15Container}/>
+					<Route path="16" component={Question16Container}/>
+					<Route path="17" component={Question17Container}/>
 				</Route>
 			</Route>
 		</Router>

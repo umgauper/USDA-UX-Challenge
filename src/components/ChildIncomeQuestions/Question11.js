@@ -24,8 +24,4 @@ export default class Question8 extends Component {
 			/>
 			)
 	}
-
-
-
-
 }

@@ -1,10 +1,12 @@
-import { ADD_CHILD_NAMES, UPDATE_CHILD_INFO } from '../actions'
+import { ADD_CHILD_NAMES, UPDATE_CHILD_INFO, ADD_ADULT_NAMES, UPDATE_ADULT_INFO } from '../actions'
 import { combineReducers } from 'redux'
 import update from 'react-addons-update'
 
 const initialState = {
 	namesArray: [],
-	firstNamesArray: []
+	firstNamesArray: [],
+	adultNamesArray: [],
+	adultFirstNamesArray: []
 }
 
 const appState = (state = initialState, action) => {
@@ -25,6 +27,26 @@ const appState = (state = initialState, action) => {
 					$set: [...state.namesArray.slice(0, action.index), 
 								Object.assign({}, state.namesArray[action.index], action.childInfo),
 								...state.namesArray.slice(action.index + 1)]
+				}
+			})
+
+		case ADD_ADULT_NAMES: 
+			return update(state, {
+				adultNamesArray: { 
+					$set: Array.concat(state.adultNamesArray, action.namesArray) 
+				},
+				adultFirstNamesArray: { 
+					$set: Array.concat(state.adultFirstNamesArray, action.firstNamesArray) 
+				}
+			})
+
+
+		case UPDATE_ADULT_INFO: 
+			return update(state, {
+				adultNamesArray: {
+					$set: [...state.adultNamesArray.slice(0, action.index), 
+								Object.assign({}, state.adultNamesArray[action.index], action.adultInfo),
+								...state.adultNamesArray.slice(action.index + 1)]
 				}
 			})
 				
