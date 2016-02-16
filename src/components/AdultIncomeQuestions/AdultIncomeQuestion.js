@@ -31,7 +31,6 @@ export default class AdultIncomeQuestion extends Component {
 			this.state.incomeObjectsArray.forEach( (obj) => {
 				let adultIncomeObject = makeAdultIncomeObject(obj.incomeCategory, obj.amt, obj.frequency)
 			    this.props.onAdultInfoClick(adultIncomeObject)
-
 			})
 		}
 
@@ -54,9 +53,7 @@ export default class AdultIncomeQuestion extends Component {
 			let newIncomeObjectsArray = this.state.incomeObjectsArray.slice(0)
 			newIncomeObjectsArray[i] = newIncomeObjectsArray[i] || {}
 			newIncomeObjectsArray[i].incomeCategory = e.target.value
-			this.setState({incomeObjectsArray: newIncomeObjectsArray})
-		
-
+			this.setState({incomeObjectsArray: newIncomeObjectsArray})	
 		}
 
 		return (

@@ -2,10 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addAdultNames, updateAdultInfo } from '../actions'
 import Question12 from '../components/AdultIncomeQuestions/Question12'
-import Question13 from '../components/AdultIncomeQuestions/Question13'
-import Question14 from '../components/AdultIncomeQuestions/Question14'
-import Question15 from '../components/AdultIncomeQuestions/Question15'
-import Question16 from '../components/AdultIncomeQuestions/Question16'
+import { Question13, Question14, Question15, Question16 } from '../components/AdultIncomeQuestions/Questions13-16'
 import Question17 from '../components/AdultIncomeQuestions/Question17'
 
 
