@@ -27,15 +27,14 @@ export default class AdultIncomeQuestion extends Component {
 			})
 		}
 
-		let nextClickHandler = (i) => {
-			console.log(i)
+		let nextClickHandler = () => {
 			console.log(this.state.incomeObjectsArray)
 
 			//TODO: fix this, its sendingobjects fo first name instead overwriting...
 			this.state.incomeObjectsArray.forEach( (obj) => {
 				let adultIncomeObject = makeAdultIncomeObject(obj.incomeCategory, obj.amt, obj.frequency)
 				console.log(adultIncomeObject)
-			    this.props.onAdultInfoClick(adultIncomeObject, i)
+			    this.props.onAdultInfoClick(adultIncomeObject)
 
 			})
 		}
@@ -57,7 +56,7 @@ export default class AdultIncomeQuestion extends Component {
 			console.log('radio clicked, updated state is...', this.state.incomeObjectsArray)
 		}
 
-		let optionClickHandler = (i, e) => {
+		let optionClickHandler = (e, i) => {
 			console.log('i, e', i, e)
 			let newIncomeObjectsArray = this.state.incomeObjectsArray.slice(0)
 			newIncomeObjectsArray[i] = newIncomeObjectsArray[i] || {}
@@ -70,25 +69,17 @@ export default class AdultIncomeQuestion extends Component {
 
 		return (
 			<div>
-
-				
-				{names.map( (name, i) => {
-					
-					return (<div> 
-								<p>{question}</p>
-								<p>{name}</p>
+				<p>{this.props.question}</p>
+				<p>{this.props.name}</p>
 
 								<IncomeInputs 
+									name={this.props.name}
 									radioClickHandler={radioClickHandler}
 									inputChangeHandler={inputChangeHandler}
 									optionClickHandler={optionClickHandler}
-									options={options}/>
-								
+									options={options}/>				
 
-								<button onClick={ () => {nextClickHandler(i)} }>NEXT</button>
-							</div>
-						)
-				}, this)}
+								<button onClick={nextClickHandler}>NEXT</button>
 			</div>)
 
 	}			

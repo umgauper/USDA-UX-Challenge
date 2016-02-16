@@ -36,7 +36,7 @@ export const addAdultNames = (namesArray, firstNamesArray) => {
 
 }
 
-export const updateAdultInfo = (adultInfo, index) => {
+export const updateAdultInfo = (index, adultInfo) => {
 	return {
 		type: UPDATE_ADULT_INFO,
 		index: index,

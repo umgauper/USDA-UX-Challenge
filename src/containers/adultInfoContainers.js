@@ -27,8 +27,8 @@ const mapDispatchToProps0 = (dispatch) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onAdultInfoClick: (adultInfo, index) => {
-			dispatch(updateAdultInfo(adultInfo, index))
+		onAdultInfoClick: (index, adultInfo) => {
+			dispatch(updateAdultInfo(index, adultInfo))
 		}
 	}
 

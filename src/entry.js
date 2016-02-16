@@ -41,7 +41,7 @@ console.log(store.getState());
 // store.dispatch(addChildNames([{"first": "Una", "MI": "M", "last": "Gauper"}], ["UNA", "INMEE", "AIDAN"])); //works!!
 // store.dispatch(updateChildInfo({isStudent: true}, 0))
 // store.dispatch(updateChildIncome(0, {wages: {fqcy: 0, amt: 100}}))
-store.dispatch(addAdultNames([{first: "maree", last: "gauper"}], ["maree"]))
+store.dispatch(addAdultNames([{first: "maree", last: "gauper"}, {first: "bob", last: "gauper"}], ["maree", "bob"]))
 // store.dispatch(updateAdultInfo({wages: {fqcy: 100, amt: 1000}}, 1))
 console.log(store.getState());
 

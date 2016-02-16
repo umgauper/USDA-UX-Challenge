@@ -13,6 +13,7 @@ export default class IncomeInputs extends Component {
 
 	render() {
 		let options = this.props.options
+		
 
 		let radioClickHandler = this.props.radioClickHandler
 		let inputChangeHandler = this.props.inputChangeHandler
@@ -25,6 +26,7 @@ export default class IncomeInputs extends Component {
 
 		return (<div> 
 			 		{( () => {
+			 			let name = this.props.name
 						let inputsArr = []
 						let num = this.state.incomeSources
 						let i = 0
@@ -33,12 +35,11 @@ export default class IncomeInputs extends Component {
 					 		inputsArr.push(<div><OptionsList 
 					 								optionClickHandler={optionClickHandler}
 					 								index={j}
-					 								options={options}
-											/>
-								 			<input type="radio" value="weekly" name={j} onClick={(e) => {radioClickHandler(e, j)}}/>
-											<input type="radio" value="twiceweekly" name={j} onClick={(e) => {radioClickHandler(e, j)}}/>
-											<input type="radio" value="monthly" name={j} onClick={(e) => {radioClickHandler(e, j)}}/>
-											<input type="radio" value="twicemonthly" name={j} onClick={(e) => {radioClickHandler(e, j)}}/>
+					 								options={options}/>
+								 			<input type="radio" value="weekly" name={name + j} onClick={(e) => {radioClickHandler(e, j)}}/>
+											<input type="radio" value="twiceweekly" name={name + j} onClick={(e) => {radioClickHandler(e, j)}}/>
+											<input type="radio" value="monthly" name={name + j} onClick={(e) => {radioClickHandler(e, j)}}/>
+											<input type="radio" value="twicemonthly" name={name + j} onClick={(e) => {radioClickHandler(e, j)}}/>
 											<input type="text" name="amt" onChange={(e) => {inputChangeHandler(e, j)}}/>
 				 						   </div>)
 				 			i++
