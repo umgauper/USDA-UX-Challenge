@@ -41,8 +41,8 @@ console.log(store.getState());
 // store.dispatch(addChildNames([{"first": "Una", "MI": "M", "last": "Gauper"}], ["UNA", "INMEE", "AIDAN"])); //works!!
 // store.dispatch(updateChildInfo({isStudent: true}, 0))
 // store.dispatch(updateChildIncome(0, {wages: {fqcy: 0, amt: 100}}))
-store.dispatch(addAdultNames([{first: "maree", last: "gauper"}, {first: "bob", last: "gauper"}], ["maree", "bob"]))
-store.dispatch(updateAdultInfo({wages: {fqcy: 100, amt: 1000}}, 1))
+store.dispatch(addAdultNames([{first: "maree", last: "gauper"}], ["maree"]))
+// store.dispatch(updateAdultInfo({wages: {fqcy: 100, amt: 1000}}, 1))
 console.log(store.getState());
 
 
@@ -79,49 +79,3 @@ render(
 	</Provider>, document.getElementById('root')
 
 	)
-// render(
-// 	// <Question8/>
-// 		// <Children>
-// 			// <Question8/>
-// 		// </Children>
-// 	// </App>
-// 	<Provider store={store}>
-// 		// <App/>
-// 		<Router history={browserHistory}>
-// 			<Route path="/" component={App}>
-// 				<Route path="children" component={Children}/>
-// 	// 				<Route path="1" component={Question1Container}/>
-// 	// 				<Route path="2" component={Question2}/>
-// 	// 				<Route path="3" component={Question3Container}/>
-// 	// 				<Route path="4" component={Question4Container}/>
-// 	// 				<Route path="5" component={Question5Container}/>
-// 	// 				<Route path="6" component={Question6Container}/>
-// 				// </Route>
-// 			</Route>
-// 	// 		<Route path="assistance" component={Assistance}>
-// 	// 			<Route path="7" component={Question7}/>
-// 	// 		</Route>
-// 	// 	    <Route path="childIncome" component={ChildIncome}>
-// 	// 	    	<Route path="8" component={Question8Container}/>
-// 	// 	    	<Route path="9" component={Question9Container}/>
-// 	// 	    	<Route path="10" component={Question10Container}/>
-// 	// 	    	<Route path="11" component={Question11Container}/>
-// 	//     	</Route>
-// 	// 	    <Route path="adultIncome" component={AdultIncome}>
-// 	// 	    	<Route path="12" component={Question12}/>
-// 	// 	    	<Route path="13" component={Question13}/>
-// 	// 	    	<Route path="14" component={Question14}/>
-// 	// 	    	<Route path="15" component={Question15}/>
-// 	// 	    	<Route path="16" component={Question16}/>
-// 	// 	    	<Route path="17" component={Question17}/>
-// 	// 	    </Route>
-
-// 	// 	    <Route path="contact" component={Contact}/>
-// 	// 		</Route>
-// 		</Router>
-// 	</Provider>
-
-
-
- 	// , document.getElementById('root'));
-//TODO: use react-router-redux ??
