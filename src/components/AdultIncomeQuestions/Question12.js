@@ -11,11 +11,10 @@ export default class Question12 extends Component {
 	}
 
 	render() {
-		let question = 'Please click the add button to list the first, middle initial (if applicable), and last name of all children living in your household: (include all household members who are infants, children, and students up to and including grade 12'
+		let question = 'Please click the add button to list the first and last name of all adults living in your household:'
 
 		let updateFirstNames = (e, i) => {
 			e.preventDefault()
-			console.log('first name updating', e.target.value, 'i: ', i)
 			let newNamesArray = this.state.namesArray
 			newNamesArray[i].first = e.target.value
 			this.setState({namesArray: newNamesArray})
@@ -33,12 +32,10 @@ export default class Question12 extends Component {
 			newNamesArray.push({first: '', last: ''})
 			this.setState({namesArray: newNamesArray})
 			this.setState({numberOfAdults: ++this.state.numberOfAdults})
-			console.log('names array: ', this.state.namesArray)
 		}
 
 		let handleClick = (e, namesArray) => {
 			e.stopPropagation()
-			alert("fiiiring")
 			let firstNamesArray = namesArray.map( (el) => { 	//TODO: It might be better to move firstNamesArray creation into the action creator?
 																//so calling the addChildNames dispatch from somewhere else doesn't mess up the name index mapping
 				return el.first
