@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { updateChildInfo } from '../actions'
+import { updateChildInfo, updateCaseNumber } from '../actions'
 import Question3 from '../components/ChildrenQuestions/Question3'
 import Question4 from '../components/ChildrenQuestions/Question4'
 import Question5 from '../components/ChildrenQuestions/Question5'
 import Question6 from '../components/ChildrenQuestions/Question6'
+import Question7 from '../components/AssistanceQuestions/Question7'
 import Question8 from '../components/ChildIncomeQuestions/Question8'
 import Question9 from '../components/ChildIncomeQuestions/Question9'
 import Question10 from '../components/ChildIncomeQuestions/Question10'
@@ -24,9 +25,15 @@ const mapDispatchToProps = (dispatch) => {
 			dispatch(updateChildInfo(childInfo, index))
 		}
 	}
-
 }
 
+const mapAssistanceDispatchToProps = (dispatch) => {
+	return {
+		onAssistanceNextClick: (caseNumber) => {
+			dispatch(updateCaseNumber(caseNumber))
+		}
+	}
+}
 
 export const Question3Container = connect(
 	mapStateToProps,
@@ -47,6 +54,11 @@ export const Question6Container = connect(
 	mapStateToProps,
 	mapDispatchToProps
 	)(Question6)
+
+export const Question7Container = connect(
+	null,
+	mapAssistanceDispatchToProps
+	)(Question7)
 
 export const Question8Container = connect(
 	mapStateToProps,

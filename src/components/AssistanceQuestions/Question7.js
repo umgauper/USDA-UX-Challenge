@@ -1,33 +1,39 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export default class Question7 extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
+		this.state = {
+			caseNumberInputDisplay: 'none',
+			caseNumber: null
+		}
 	}
 
 	render() {
-		let question = 'Do any household members (including you) currently participate in one or more of the following assistance programs: SNAP, TANF, FDPIR?';
+		let question = 'Do any household members (including you) currently participate in one or more of the following assistance programs: SNAP, TANF, FDPIR?'
+
 		let handleYesClick = () => {
-			//set showCaseNumber Input to true
+			this.setState({caseNumberInputDisplay: 'block'})
+		}
 
-		}//Move to App state, and pass as prop
-		let inputStyle = () => {
+		let nextClickHandler = () => {
+			this.props.onAssistanceNextClick(this.state.caseNumber)
+		}
 
-			//return this.props.showCaseNumberInput ? {display:'block'} : {display: 'none'}
+		let inputChangeHandler = (e) => {
+			this.setState({caseNumber: e.target.value})
 		}
 
 		return (
 			<div>
 				<h6>{question}</h6>
-				<div onClick={handleYesClick()}>Yes</div>
-				<input type="text" style={{display: 'none'}}/>
-				<div>Next</div>
+				<div onClick={() => {handleYesClick()}}>Yes</div>
+				<div style={{display: this.state.caseNumberInputDisplay}}>
+					<h4> Please enter your case number: </h4>
+					<input type="text" onChange={(e) => { inputChangeHandler(e) }}/>
+				</div>
+				<button onClick={nextClickHandler}>Next</button>
 			</div>
 			)
 	}
-
-
-//TODO: test local npm build & npm start, get links working on Heroku
-//Then, fill out income section 
-
 }

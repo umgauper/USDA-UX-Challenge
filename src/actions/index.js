@@ -6,6 +6,7 @@ export const ADD_CHILD_NAMES = 'ADD_CHILD_NAMES'
 export const UPDATE_CHILD_INFO = 'UPDATE_CHILD_INFO'
 export const ADD_ADULT_NAMES = 'ADD_ADULT_NAMES'
 export const UPDATE_ADULT_INFO = 'UPDATE_ADULT_INFO'
+export const UPDATE_CASE_NUMBER = 'UPDATE_CASE_NUMBER'
 
 /*
  * action creators
@@ -41,5 +42,12 @@ export const updateAdultInfo = (index, adultInfo) => {
 		type: UPDATE_ADULT_INFO,
 		index: index,
 		adultInfo
+	}
+}
+
+export const updateCaseNumber = (caseNumber) => {
+	return {
+		type: UPDATE_CASE_NUMBER,
+		caseNumber
 	}
 }

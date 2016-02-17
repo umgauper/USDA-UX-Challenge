@@ -7,16 +7,12 @@ import ChildIncome from './components/ChildIncome'
 import AdultIncome from './components/AdultIncome'
 import Contact from './components/Contact'
 import Question1Container from './containers/Question1Container'
-import { Question3Container, Question4Container, Question5Container, Question6Container,
+import { Question3Container, Question4Container, Question5Container, Question6Container, Question7Container,
 		 Question8Container, Question9Container, Question10Container, Question11Container} from './containers/childInfoContainers'
 import { Question12Container, Question13Container, Question14Container, Question15Container, Question16Container,
 		 Question17Container } from './containers/adultInfoContainers'
 import Question1 from './components/ChildrenQuestions/Question1'
 import Question2 from './components/ChildrenQuestions/Question2'
-import Question3 from './components/ChildrenQuestions/Question3'
-// import Question4 from './components/ChildrenQuestions/Question4'
-import Question5 from './components/ChildrenQuestions/Question5'
-import Question6 from './components/ChildrenQuestions/Question6'
 import Question8 from './components/ChildIncomeQuestions/Question8'
 import Question12 from './components/AdultIncomeQuestions/Question12'
 import Question17 from './components/AdultIncomeQuestions/Question17'
@@ -56,6 +52,7 @@ render(
 					<Route path="5" component={Question5Container}/>
 					<Route path="6" component={Question6Container}/>
 				</Route>
+				<Route path="assistance" component={Question7Container} />
 				<Route path="childIncome" component={ChildIncome}>
 					<Route path="8" component={Question8Container}/>
 					<Route path="9" component={Question9Container}/>
