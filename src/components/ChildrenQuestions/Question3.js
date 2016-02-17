@@ -11,11 +11,16 @@ export default class Question3 extends Component {
 	}
 	
 	render() {
-		let question = 'Is ... a student at Wheatland Elementary'
+		let heading = 'For each child, please indicate if he/she is a student at Wheatland Elementary'
+		let question = (name) => {
+			return `Is ${name} a student at Wheatland Elementary?`
+		}
+
 		return (<ChildInfoQuestion 
 					onYesClick={this.props.onChildInfoClick.bind(null, {isStudent: true})} 
 					onNoClick={this.props.onChildInfoClick.bind(null, {isStudent: false})}
 					question={question}
+					heading={heading}
 					names={this.props.names}
 						/>)
 	}

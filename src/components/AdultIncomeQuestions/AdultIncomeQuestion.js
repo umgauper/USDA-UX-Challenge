@@ -60,16 +60,14 @@ export default class AdultIncomeQuestion extends Component {
 			<div>
 				<p>{this.props.question}</p>
 				<p>{this.props.name}</p>
+				<IncomeInputs 
+					name={this.props.name}
+					radioClickHandler={radioClickHandler}
+					inputChangeHandler={inputChangeHandler}
+					optionClickHandler={optionClickHandler}
+					options={options}/>				
 
-								<IncomeInputs 
-									name={this.props.name}
-									radioClickHandler={radioClickHandler}
-									inputChangeHandler={inputChangeHandler}
-									optionClickHandler={optionClickHandler}
-									options={options}/>				
-
-								<button onClick={nextClickHandler}>NEXT</button>
+				<button onClick={nextClickHandler}>NEXT</button>
 			</div>)
-
 	}			
 }

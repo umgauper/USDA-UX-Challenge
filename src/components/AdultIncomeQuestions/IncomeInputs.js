@@ -47,12 +47,8 @@ export default class IncomeInputs extends Component {
 					 	return inputsArr
 					 	})()
 					 }
-					
-			<button onClick={addIncomeSource}>Add Income Source </button>
-			
+			<button onClick={addIncomeSource}>Add Income Source </button>		
 
 			</div>)
 	}
-
-
 }

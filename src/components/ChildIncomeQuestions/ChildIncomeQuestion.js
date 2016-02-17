@@ -27,7 +27,7 @@ export default class ChildIncomeQuestion extends Component {
 				enumerable: true,
       			writable: true,
       			configurable: true,
-      			value: {
+      			value: {                                //TODO: refactor so object is { wages: blah, amt: , fqcy} ? to match adult names objects...
       				amt: this.state.amt,
       				frequency: this.state.frequency
       			}

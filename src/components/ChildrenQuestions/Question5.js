@@ -11,12 +11,16 @@ export default class Question5 extends Component {
 	}
 
 	render() {
-		let question = 'For each child, please indicate if he/she is homeless, a migrant, or a runaway:'
+		let heading = 'For each child, please indicate if he/she is homeless, a migrant, or a runaway:'
+		let question = (name) => {
+			return `Is ${name} homeless, a migrant, or a runaway?`
+		}
 
 		return (<ChildInfoQuestion 
 					onYesClick={this.props.onChildInfoClick.bind(null, {isMigrant: true})} 
 					onNoClick={this.props.onChildInfoClick.bind(null, {isMigrant: false})}
 					question={question}
+					heading={heading}
 					names={this.props.names}
 						/>)
 	}

@@ -11,14 +11,18 @@ export default class Question6 extends Component {
 	}
 
 	render() {
-		let question = 'For each child, please indicate if he/she is a Head Start participant:'
-		//console.log(this.props.store.getState())
+		let heading = 'For each child, please indicate if he/she is a Head Start participant:'
+		let question = (name) => {
+			return `Is ${name} a Head Start participant?`
+		}
+		
 
 		return (
 			 <ChildInfoQuestion 
 					onYesClick={this.props.onChildInfoClick.bind(null, {isHeadStart: true}) }
 					onNoClick={this.props.onChildInfoClick.bind(null, {isHeadStart: false}) }
 					question={question}
+					heading={heading}
 					names={this.props.names}
 						/>
 				)
