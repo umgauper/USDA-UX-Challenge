@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 export default class Question7 extends Component {
 	constructor(props) {
@@ -27,12 +28,15 @@ export default class Question7 extends Component {
 		return (
 			<div>
 				<h6>{question}</h6>
-				<div onClick={() => {handleYesClick()}}>Yes</div>
+				<button onClick={handleYesClick}>Yes</button>
+				<Link to="childIncome/8"><button>No</button></Link>
+
 				<div style={{display: this.state.caseNumberInputDisplay}}>
 					<h4> Please enter your case number: </h4>
 					<input type="text" onChange={(e) => { inputChangeHandler(e) }}/>
+					<Link to="contact"><button onClick={nextClickHandler}>Next</button></Link>
 				</div>
-				<button onClick={nextClickHandler}>Next</button>
+				
 			</div>
 			)
 	}
