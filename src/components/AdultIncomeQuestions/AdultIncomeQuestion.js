@@ -11,7 +11,7 @@ export default class AdultIncomeQuestion extends Component {
 
 	render() {
 		let question = this.props.question
-		let names = this.props.names
+		let name = this.props.name
 		let options = this.props.options
 		let defaultOption = this.props.options[0]
 
@@ -58,15 +58,13 @@ export default class AdultIncomeQuestion extends Component {
 
 		return (
 			<div>
-				<p>{this.props.question}</p>
-				<p>{this.props.name}</p>
+				<h6>{question(name)}</h6>
 				<IncomeInputs 
-					name={this.props.name}
+					name={name}
 					radioClickHandler={radioClickHandler}
 					inputChangeHandler={inputChangeHandler}
 					optionClickHandler={optionClickHandler}
 					options={options}/>				
-
 				<button onClick={nextClickHandler}>NEXT</button>
 			</div>)
 	}			

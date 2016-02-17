@@ -25,8 +25,4 @@ export default class Question4 extends Component {
 						/>)
 			
 	}
-
-
-
-
 }
