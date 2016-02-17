@@ -11,7 +11,10 @@ export default class Question10 extends Component {
 	}
 
 	render() {
-		let question = "Does child[n] receive Social Security benefits because the child's parent is disabled, retired, or deceased?"
+		let question = (name) => {
+			return `Does ${name} receive Social Security benefits because the child's parent is disabled, retired, or deceased?`
+		}
+
 		let incomeCategory = 'socialSecurityParent'
 		
 

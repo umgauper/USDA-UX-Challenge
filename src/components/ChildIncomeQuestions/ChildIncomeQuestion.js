@@ -42,10 +42,9 @@ export default class ChildIncomeQuestion extends Component {
 		return (
 			<div>
 				
-				{names.map( (el, i) => {
+				{names.map( (name, i) => {
 					return (<div> 
-								<p>{question}</p>
-								<p>{el}</p>
+								<p>{question(name)}</p>
 								<input type="radio" value="weekly" name="frequency" onClick={(e) => {radioClickHandler(e)}}/>
 								<input type="radio" value="twiceweekly" name="frequency" onClick={(e) => {radioClickHandler(e)}}/>
 								<input type="radio" value="monthly" name="frequency" onClick={(e) => {radioClickHandler(e)}}/>

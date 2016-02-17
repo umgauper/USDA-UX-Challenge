@@ -11,7 +11,10 @@ export default class Question8 extends Component {
 	}
 
 	render() {
-		let question = 'Does child[n] earn a salary or wages from a job?'
+		let question = (name) => {
+			return `Does ${name} earn a salary or wages from a job?`
+		}
+		
 		let incomeCategory = 'wages'
 		
 

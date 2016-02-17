@@ -11,7 +11,10 @@ export default class Question8 extends Component {
 	}
 
 	render() {
-		let question = "Does child[n] regularly receive spending money or other income from a person outside the household such as an extended family member or friend?"
+		let question = (name) => {
+			return `Does ${name} regularly receive spending money or other income from a person outside the household such as an extended family member or friend?`
+		}
+
 		let incomeCategory = 'spendingMoney'
 		
 
