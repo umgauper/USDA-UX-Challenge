@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addAdultNames, updateAdultInfo } from '../actions'
+import { addAdultNames, updateAdultInfo, updateContactInfo } from '../actions'
 import Question12 from '../components/AdultIncomeQuestions/Question12'
 import { Question13, Question14, Question15, Question16 } from '../components/AdultIncomeQuestions/Questions13-16'
 import Question17 from '../components/AdultIncomeQuestions/Question17'
+import Contact from '../components/Contact'
 
 
 import ChildInfoQuestion from '../components/ChildrenQuestions/ChildInfoQuestion'
@@ -28,7 +29,15 @@ const mapDispatchToProps = (dispatch) => {
 			dispatch(updateAdultInfo(index, adultInfo))
 		}
 	}
+}
 
+const mapContactDispatchToProps = (dispatch) => {
+	return {
+		onContactNextClick: (contactInfo) => {
+			alert('oncontact')
+			dispatch(updateContactInfo(contactInfo))
+		}
+	}
 }
 
 
@@ -61,4 +70,9 @@ export const Question17Container = connect(
 	mapStateToProps,
 	mapDispatchToProps
 	)(Question17)
+
+export const ContactContainer = connect(
+	null,
+	mapContactDispatchToProps
+	)(Contact)
 

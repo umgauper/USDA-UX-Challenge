@@ -1,4 +1,4 @@
-import { ADD_CHILD_NAMES, UPDATE_CHILD_INFO, ADD_ADULT_NAMES, UPDATE_ADULT_INFO, UPDATE_CASE_NUMBER } from '../actions'
+import { ADD_CHILD_NAMES, UPDATE_CHILD_INFO, ADD_ADULT_NAMES, UPDATE_ADULT_INFO, UPDATE_CASE_NUMBER, UPDATE_CONTACT_INFO } from '../actions'
 import { combineReducers } from 'redux'
 import update from 'react-addons-update'
 
@@ -7,7 +7,17 @@ const initialState = {
 	firstNamesArray: [],
 	adultNamesArray: [],
 	adultFirstNamesArray: [],
-	caseNumber: null
+	caseNumber: null,
+	contactInfo: {
+		aptNumber: '',
+		city: '',
+		state: '',
+		zip: null,
+		date: '',
+		name: '',
+		phone: null,
+		email: ''
+	}
 }
 
 const appState = (state = initialState, action) => {
@@ -57,6 +67,9 @@ const appState = (state = initialState, action) => {
 					$set: action.caseNumber
 				}
 			})
+
+		case UPDATE_CONTACT_INFO:
+			return update(state, {$merge: action.contactInfo})
 				
 		default:
 			return state

@@ -10,7 +10,7 @@ import Question1Container from './containers/Question1Container'
 import { Question3Container, Question4Container, Question5Container, Question6Container, Question7Container,
 		 Question8Container, Question9Container, Question10Container, Question11Container} from './containers/childInfoContainers'
 import { Question12Container, Question13Container, Question14Container, Question15Container, Question16Container,
-		 Question17Container } from './containers/adultInfoContainers'
+		 Question17Container, ContactContainer} from './containers/adultInfoContainers'
 import Question1 from './components/ChildrenQuestions/Question1'
 import Question2 from './components/ChildrenQuestions/Question2'
 import Question8 from './components/ChildIncomeQuestions/Question8'
@@ -22,7 +22,7 @@ import Router, { Route, Link, IndexRoute, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import usdaApp from './reducers'
-import { addChildNames, updateChildInfo, addAdultNames, updateAdultInfo } from './actions'
+import { addChildNames, updateChildInfo, addAdultNames, updateAdultInfo, updateContactInfo } from './actions'
 
 let store = createStore(usdaApp)
 
@@ -33,6 +33,7 @@ console.log(store.getState());
 // store.dispatch(addChildNames([{"first": "Una", "MI": "M", "last": "Gauper"}], ["UNA", "INMEE", "AIDAN"])); //works!!
 // store.dispatch(updateChildInfo({isStudent: true}, 0))
 // store.dispatch(updateChildIncome(0, {wages: {fqcy: 0, amt: 100}}))
+store.dispatch(updateContactInfo({contactInfo: {email: 'una', phone: 'you'}}))
 store.dispatch(addAdultNames([{first: "maree", last: "gauper"}, {first: "bob", last: "gauper"}], ["maree", "bob"]))
 // store.dispatch(updateAdultInfo({wages: {fqcy: 100, amt: 1000}}, 1))
 console.log(store.getState());
@@ -67,6 +68,7 @@ render(
 					<Route path="16" component={Question16Container}/>
 					<Route path="17" component={Question17Container}/>
 				</Route>
+				<Route path="contact" component={ContactContainer}/>
 			</Route>
 		</Router>
 	</Provider>, document.getElementById('root')
