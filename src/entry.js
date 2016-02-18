@@ -22,24 +22,9 @@ import Router, { Route, Link, IndexRoute, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import usdaApp from './reducers'
-import { addChildNames, updateChildInfo, addAdultNames, updateAdultInfo, updateContactInfo } from './actions'
+import { addChildNames, updateChildInfo, addAdultNames, updateAdultInfo, updateContactInfo, updateSSN } from './actions'
 
 let store = createStore(usdaApp)
-
-
-// testing...
-//get initial state:
-console.log(store.getState());
-// store.dispatch(addChildNames([{"first": "Una", "MI": "M", "last": "Gauper"}], ["UNA", "INMEE", "AIDAN"])); //works!!
-// store.dispatch(updateChildInfo({isStudent: true}, 0))
-// store.dispatch(updateChildIncome(0, {wages: {fqcy: 0, amt: 100}}))
-store.dispatch(updateContactInfo({contactInfo: {email: 'una', phone: 'you'}}))
-store.dispatch(addAdultNames([{first: "maree", last: "gauper"}, {first: "bob", last: "gauper"}], ["maree", "bob"]))
-// store.dispatch(updateAdultInfo({wages: {fqcy: 100, amt: 1000}}, 1))
-console.log(store.getState());
-
-
-
 
 render(
 	<Provider store={store}>
@@ -72,5 +57,4 @@ render(
 			</Route>
 		</Router>
 	</Provider>, document.getElementById('root')
-
 	)

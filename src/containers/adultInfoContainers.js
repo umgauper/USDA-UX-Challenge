@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addAdultNames, updateAdultInfo, updateContactInfo } from '../actions'
+import { addAdultNames, updateAdultInfo, updateContactInfo, updateSSN } from '../actions'
 import Question12 from '../components/AdultIncomeQuestions/Question12'
 import { Question13, Question14, Question15, Question16 } from '../components/AdultIncomeQuestions/Questions13-16'
 import Question17 from '../components/AdultIncomeQuestions/Question17'
@@ -34,12 +34,18 @@ const mapDispatchToProps = (dispatch) => {
 const mapContactDispatchToProps = (dispatch) => {
 	return {
 		onContactNextClick: (contactInfo) => {
-			alert('oncontact')
 			dispatch(updateContactInfo(contactInfo))
 		}
 	}
 }
 
+const mapSSNDispatchToProps = (dispatch) => {
+	return {
+		onNextClick: (ssnObj) => {
+			dispatch(updateSSN(ssnObj))
+		}
+	}
+}
 
 export const Question12Container = connect(
 	null,
@@ -67,8 +73,8 @@ export const Question16Container = connect(
 	)(Question16)
 
 export const Question17Container = connect(
-	mapStateToProps,
-	mapDispatchToProps
+	null,
+	mapSSNDispatchToProps
 	)(Question17)
 
 export const ContactContainer = connect(

@@ -8,6 +8,7 @@ export const ADD_ADULT_NAMES = 'ADD_ADULT_NAMES'
 export const UPDATE_ADULT_INFO = 'UPDATE_ADULT_INFO'
 export const UPDATE_CASE_NUMBER = 'UPDATE_CASE_NUMBER'
 export const UPDATE_CONTACT_INFO = 'UPDATE_CONTACT_INFO'
+export const UPDATE_SSN = 'UPDATE_SSN'
 /*
  * action creators
  */
@@ -56,5 +57,12 @@ export const updateContactInfo = (contactInfo) => {
 	return {
 		type: UPDATE_CONTACT_INFO,
 		contactInfo
+	}
+}
+
+export const updateSSN = (ssnObj) => {
+	return {
+		type: UPDATE_SSN,
+		ssnObj
 	}
 }
