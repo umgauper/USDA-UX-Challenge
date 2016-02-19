@@ -11,10 +11,12 @@ export default class App extends Component {
       <div>
        <h1>Main App</h1>
        <Link to="children">Children</Link>
-       // <Link to="assistance">Assistance</Link>
-       // <Link to="childIncome">Child Income</Link>
-       // <Link to="adultIncome">Adult Income</Link>
-       // <Link to="contact">Contact Information</Link>
+   
+       <Link to="assistance">Assistance</Link>
+       <Link to="childIncome">Child Income</Link>
+       <Link to="adultIncome">Adult Income</Link>
+       <Link to="contact">Contact Information</Link>
+       <Link to="confirm">CONFIRM</Link>
        {this.props.children}
       </div>
     );

@@ -10,7 +10,8 @@ import Question1Container from './containers/Question1Container'
 import { Question3Container, Question4Container, Question5Container, Question6Container, Question7Container,
 		 Question8Container, Question9Container, Question10Container, Question11Container} from './containers/childInfoContainers'
 import { Question12Container, Question13Container, Question14Container, Question15Container, Question16Container,
-		 Question17Container, ContactContainer} from './containers/adultInfoContainers'
+		 Question17Container, ContactContainer } from './containers/adultInfoContainers'
+import { ConfirmationContainer } from './containers/ConfirmationContainer'
 import Question1 from './components/ChildrenQuestions/Question1'
 import Question2 from './components/ChildrenQuestions/Question2'
 import Question8 from './components/ChildIncomeQuestions/Question8'
@@ -25,6 +26,17 @@ import usdaApp from './reducers'
 import { addChildNames, updateChildInfo, addAdultNames, updateAdultInfo, updateContactInfo, updateSSN } from './actions'
 
 let store = createStore(usdaApp)
+
+store.dispatch(addChildNames([{first: "Una", MI: "M", last: "Gauper"}, {first: "Orrin", MI: "A", last: "Gauper"}], ["Una", "Orrin"]))
+store.dispatch(updateChildInfo({wages: {frequency: "weekly", amt: 1000}}, 1))
+store.dispatch(updateChildInfo({spendingMoney: {frequency: "weekly", amt: 1000}}, 0))
+store.dispatch(updateChildInfo({salary: {frequency: "weekly", amt: 1000}}, 0))
+store.dispatch(updateChildInfo({isStudent: false}, 0))
+store.dispatch(updateChildInfo({isStudent: true}, 1))
+store.dispatch(updateChildInfo({isMigrant: false}, 0))
+store.dispatch(updateChildInfo({isMigrant: false}, 1))
+store.dispatch(updateChildInfo({isHeadStart: false}, 0))
+store.dispatch(updateChildInfo({isHeadStart: false}, 1))
 
 render(
 	<Provider store={store}>
@@ -54,6 +66,7 @@ render(
 					<Route path="17" component={Question17Container}/>
 				</Route>
 				<Route path="contact" component={ContactContainer}/>
+				<Route path="confirm" component={ConfirmationContainer}/>
 			</Route>
 		</Router>
 	</Provider>, document.getElementById('root')

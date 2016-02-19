@@ -18,7 +18,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps0 = (dispatch) => {
 	return {
 		onQuestion12NextClick: (adultNamesArray, adultFirstNamesArray) => {
-			dispatch(addAdultNames(adultNamesArray, adultFirstNamesArray))	//TODO: Refactor, too much repetition! (similar to update childnames...)
+			dispatch(addAdultNames(adultNamesArray, adultFirstNamesArray))	
 		}
 	}	
 }
