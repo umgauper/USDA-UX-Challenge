@@ -13,16 +13,22 @@ export default class Question12 extends Component {
 	render() {
 		let question = 'Please click the add button to list the first and last name of all adults living in your household:'
 
+		let isValid = (str) => {
+			return !/[^a-zA-Z]/.test(str)
+		}
+
 		let updateFirstNames = (e, i) => {
 			e.preventDefault()
 			let newNamesArray = this.state.namesArray
 			newNamesArray[i].first = e.target.value
+			newNamesArray[i].firstIsValid = isValid(e.target.value)
 			this.setState({namesArray: newNamesArray})
 		}
 
 		let updateLastName = (e, i) => {
 			let newNamesArray = this.state.namesArray
 			newNamesArray[i].last = e.target.value
+			newNamesArray[i].lastIsValid = isValid(e.target.value)
 			this.setState({namesArray: newNamesArray})
 		}
 
@@ -53,9 +59,11 @@ export default class Question12 extends Component {
 					let i = 0
 				 	while (i < num) {
 				 		let j = i
+				 		let nameObj = this.state.namesArray[j]
 				 		inputsArr.push(<div>
 									<input onChange={(e) => updateFirstNames(e, j)} type="text" />
 									<input onChange={(e) => updateLastName(e, j)} type="text" />
+									<span>{ (nameObj.firstIsValid === false || nameObj.lastIsValid === false) ? 'INVALID' : ''}</span>
 								</div>)
 				 		i++
 				 		}
@@ -66,7 +74,10 @@ export default class Question12 extends Component {
 
 				<Link to="adultIncome/13">
 					<button 
-						onClick={(e)=> { handleClick(e, this.state.namesArray) } }>
+						onClick={(e)=> { handleClick(e, this.state.namesArray) } }
+						disabled={  this.state.namesArray.some( (el) => { return !el.firstIsValid || !el.lastIsValid }) 
+									|| this.state.namesArray.some( (el) => { return el.first === '' || el.last === ''})}
+						>
 						NEXT
 					</button>
 				</Link>

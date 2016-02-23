@@ -6,8 +6,7 @@ export default class IncomeInputs extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			selected: null,
-			incomeSources: 1
+			selected: null
 		}
 	}
 
@@ -19,16 +18,11 @@ export default class IncomeInputs extends Component {
 		let inputChangeHandler = this.props.inputChangeHandler
 		let optionClickHandler = this.props.optionClickHandler
 
-
-		let addIncomeSource = () => {
-			this.setState({incomeSources: ++this.state.incomeSources})
-		}
-
 		return (<div> 
 			 		{( () => {
 			 			let name = this.props.name
 						let inputsArr = []
-						let num = this.state.incomeSources
+						let num = this.props.incomeSources
 						let i = 0
 					 	while (i < num) {
 					 		let j = i
@@ -41,13 +35,14 @@ export default class IncomeInputs extends Component {
 											<input type="radio" value="monthly" name={name + j} onClick={(e) => {radioClickHandler(e, j)}}/>
 											<input type="radio" value="twicemonthly" name={name + j} onClick={(e) => {radioClickHandler(e, j)}}/>
 											<input type="text" name="amt" onChange={(e) => {inputChangeHandler(e, j)}}/>
+											<span>{ this.props.validities[j] === false ? 'WRONG' : ''}</span>
 				 						   </div>)
 				 			i++
 					 		}
 					 	return inputsArr
 					 	})()
 					 }
-			<button onClick={addIncomeSource}>Add Income Source </button>		
+			<button onClick={this.props.addIncomeSource}>Add Income Source </button>		
 
 			</div>)
 	}

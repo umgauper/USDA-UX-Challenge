@@ -30,11 +30,22 @@ export default class Contact extends Component { //TODO: finish this part so nex
 			this.setState({contactInfo: newContactInfo})
 		}
 
+		let isEmail = () => {
+
+		}
+
+		let isNumeric = () => {
+
+		}
+
+		let is
+
 		return (
 			<div>
 				<h3>Contact	Section</h3>
 				<p> Apt #</p>
 				<input type="text" onChange={(e)=> { handleInput({aptNumber: e.target.value})} }/>
+				<span> { }
 				<p> City</p>
 				<input type="text" onChange={(e)=> { handleInput({city: e.target.value})} }/>
 				<p> State</p>

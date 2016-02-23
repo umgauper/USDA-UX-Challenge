@@ -13,24 +13,30 @@ export default class Question1 extends Component {
 	render() {
 		let question = 'Please click the add button to list the first, middle initial (if applicable), and last name of all children living in your household: (include all household members who are infants, children, and students up to and including grade 12'
 
-		let updateFirstNames = (e, i) => {
+		let isValid = (str) => {
+			return !/[^a-zA-Z]/.test(str)
+		}
+
+		let updateFirstName = (e, i) => {
 			e.preventDefault()
 			console.log('first name updating', e.target.value, 'i: ', i)
-			//let first = e.target.value
 			let newNamesArray = this.state.namesArray
 			newNamesArray[i].first = e.target.value
+			newNamesArray[i].firstIsValid = isValid(e.target.value)
 			this.setState({namesArray: newNamesArray})
 		}
 
 		let updateMiddleInitial = (e, i) => {
 			let newNamesArray = this.state.namesArray
 			newNamesArray[i].MI = e.target.value
+			newNamesArray[i].MIisValid = isValid(e.target.value)
 			this.setState({namesArray: newNamesArray})
 		}
 
 		let updateLastName = (e, i) => {
 			let newNamesArray = this.state.namesArray
 			newNamesArray[i].last = e.target.value
+			newNamesArray[i].lastIsValid = isValid(e.target.value)
 			this.setState({namesArray: newNamesArray})
 		}
 
@@ -63,10 +69,12 @@ export default class Question1 extends Component {
 					let i = 0
 				 	while (i < num) {
 				 		let j = i
+				 		let nameObj = this.state.namesArray[j]
 				 		inputsArr.push(<div>
-									<input onChange={(e) => updateFirstNames(e, j)} type="text" />
+									<input onChange={(e) => updateFirstName(e, j)} type="text" />
 									<input onChange={(e) => updateMiddleInitial(e, j)} type="text" maxLength={1} />
 									<input onChange={(e) => updateLastName(e, j)} type="text" />
+									<span>{ (nameObj.firstIsValid === false || nameObj.MIisValid === false || nameObj.lastIsValid === false) ? 'INVALID' : ''}</span>
 								</div>)
 				 		i++
 				 		}
@@ -77,7 +85,11 @@ export default class Question1 extends Component {
 
 				<Link to="children/2">
 					<button 
-						onClick={(e)=> { handleClick(e, this.state.namesArray) } }>
+						onClick={(e)=> { handleClick(e, this.state.namesArray) } }
+						disabled={  this.state.namesArray.some( (el) => { return !el.firstIsValid || !el.MIisValid || !el.lastIsValid }) 
+									|| this.state.namesArray.some( (el) => { return el.first === '' || el.MI === '' || el.last === ''})
+					}
+						>
 						NEXT
 					</button>
 				</Link>

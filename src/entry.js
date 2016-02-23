@@ -37,6 +37,7 @@ store.dispatch(updateChildInfo({isMigrant: false}, 0))
 store.dispatch(updateChildInfo({isMigrant: false}, 1))
 store.dispatch(updateChildInfo({isHeadStart: false}, 0))
 store.dispatch(updateChildInfo({isHeadStart: false}, 1))
+store.dispatch(addAdultNames([{first: "bob", last: "gauper"}, {first: "maree", last: "gauper"}], ["Bob", "Maree"] ))
 
 render(
 	<Provider store={store}>

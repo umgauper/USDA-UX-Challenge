@@ -34,7 +34,12 @@ export default class Question7 extends Component {
 				<div style={{display: this.state.caseNumberInputDisplay}}>
 					<h4> Please enter your case number: </h4>
 					<input type="text" onChange={(e) => { inputChangeHandler(e) }}/>
-					<Link to="contact"><button onClick={nextClickHandler}>Next</button></Link>
+					<Link to="contact">
+						<button 
+							onClick={nextClickHandler}
+							disabled={!this.state.caseNumber}>Next
+						</button>
+					</Link>
 				</div>
 				
 			</div>
