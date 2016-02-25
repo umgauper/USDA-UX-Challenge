@@ -4,6 +4,9 @@ import AdultIncomeQuestion from './AdultIncomeQuestion'
 export const Question13 = class extends Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			activeIndex: 0
+		}
 	}
 
 	render() {
@@ -16,9 +19,13 @@ export const Question13 = class extends Component {
 		let options = ['salary', 'wages', 'cash bonuses', 'net income from self employment', 'strike benefits', 'unemployment insurance', 'other']
 
 		return (<div> {names.map( (name, i)=> {
-			return (<AdultIncomeQuestion 
+			return (<AdultIncomeQuestion
+					i={i} 
 					question={question}
+					activeIndex={this.state.activeIndex}
+					increaseActiveIndex={()=> { this.setState( {activeIndex: this.state.activeIndex + 1 })}}
 					name={name}
+					numberOfNames={names.length}
 					options={options}
 					onAdultInfoClick={this.props.onAdultInfoClick.bind(null, i)}/>)
 
@@ -29,6 +36,9 @@ export const Question13 = class extends Component {
 export const Question14 = class extends Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			activeIndex: 0
+		}
 	}
 
 	render() {
@@ -42,6 +52,10 @@ export const Question14 = class extends Component {
 
 		return (<div> {names.map( (name, i)=> {
 			return (<AdultIncomeQuestion 
+					i={i}
+					activeIndex={this.state.activeIndex}
+					increaseActiveIndex={()=> { this.setState( {activeIndex: this.state.activeIndex + 1 })}}
+					numberOfNames={names.length}
 					question={question}
 					name={name}
 					options={options}
@@ -52,6 +66,9 @@ export const Question14 = class extends Component {
 export const Question15 = class extends Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			activeIndex: 0
+		}
 	}
 
 	render() {
@@ -65,8 +82,12 @@ export const Question15 = class extends Component {
 
 		return (<div> {names.map( (name, i)=> {
 			return (<AdultIncomeQuestion 
+						i={i} 
 					question={question}
+					activeIndex={this.state.activeIndex}
+					increaseActiveIndex={()=> { this.setState( {activeIndex: this.state.activeIndex + 1 })}}
 					name={name}
+					numberOfNames={names.length}
 					options={options}
 					onAdultInfoClick={this.props.onAdultInfoClick.bind(null, i)}/>)
 
@@ -77,6 +98,9 @@ export const Question15 = class extends Component {
 export const Question16 = class extends Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			activeIndex: 0
+		}
 	}
 
 	render() {
@@ -91,8 +115,12 @@ export const Question16 = class extends Component {
 
 		return (<div> {names.map( (name, i)=> {
 			return (<AdultIncomeQuestion 
+						i={i} 
 					question={question}
+					activeIndex={this.state.activeIndex}
+					increaseActiveIndex={()=> { this.setState( {activeIndex: this.state.activeIndex + 1 })}}
 					name={name}
+					numberOfNames={names.length}
 					options={options}
 					onAdultInfoClick={this.props.onAdultInfoClick.bind(null, i)}/>)
 

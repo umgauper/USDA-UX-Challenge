@@ -18,7 +18,7 @@ export default class IncomeInputs extends Component {
 		let inputChangeHandler = this.props.inputChangeHandler
 		let optionClickHandler = this.props.optionClickHandler
 
-		return (<div> 
+		return (<div style={this.props.show ? {display: 'block'} : {display: 'none'} }> 
 			 		{( () => {
 			 			let name = this.props.name
 						let inputsArr = []
