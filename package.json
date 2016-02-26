@@ -41,6 +41,7 @@
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
     "history": "^1.17.0",
+    "jquery": "^2.2.1",
     "path": "^0.11.14",
     "react": "^0.14.3",
     "react-addons-update": "^0.14.7",
