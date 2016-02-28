@@ -26,13 +26,6 @@ export default class Contact extends Component { //TODO: finish this part so nex
 		}
 	}
 
-	componentDidMount() {
-		alert('component mounted!')
-		window.getElementsByTagName('input').addEventListener('onInput', ()=> { console.log('input entered')} )
-
-	}
-
-
 	render() {
 		let nextClickHandler = () => {
 			console.log(this.state)
@@ -123,28 +116,31 @@ export default class Contact extends Component { //TODO: finish this part so nex
 	
 		return (
 			<div>
-				<h3>Contact	Section</h3>
+				<h3>Contact	Information</h3>
 				<p> Apt #</p>
 				<input type="text" onChange={(e)=> { handleInput('aptNumber', e)} }/>
-				<span> {this.state.aptIsValid === false ? 'INVALID' : ''}</span>
+				<span
+					style={ {color: 'rgb(211, 36, 33)'}}
+					> {this.state.aptIsValid === false ? 'Invalid Input' : ''}</span>
 				<p> City</p>
 				<input type="text" onChange={(e)=> { handleInput('city', e)} }/>
-				<span> {this.state.cityIsValid === false ? 'INVALID' : ''}</span>
+				<span
+					style={ {color: 'rgb(211, 36, 33)'}}> {this.state.cityIsValid === false ? 'Invalid Input' : ''}</span>
 				<p>State</p>
 				<input type="text" onChange={(e)=> { handleInput('state', e)} }/>
-				<span> {this.state.stateIsValid === false ? 'INVALID' : ''}</span>
+				<span style={ {color: 'rgb(211, 36, 33)'}}> {this.state.stateIsValid === false ? 'Invalid Input' : ''}</span>
 				<p>Zip Code</p>
 				<input type="text" onChange={(e)=> { handleInput('zip', e)} }/>
-				<span> {this.state.zipIsValid === false ? 'INVALID' : ''}</span>
+				<span style={ {color: 'rgb(211, 36, 33)'}}> {this.state.zipIsValid === false ? 'Invalid Input' : ''}</span>
 				<p>Your Name</p>
 				<input type="text" onChange={(e)=> { handleInput('name', e)} }/>
-				<span> {this.state.nameIsValid === false ? 'INVALID' : ''}</span>
-				<p>daytime phone</p>
+				<span style={ {color: 'rgb(211, 36, 33)'}}> {this.state.nameIsValid === false ? 'Invalid Input' : ''}</span>
+				<p>Daytime Phone</p>
 				<input type="text" onChange={(e)=> { handleInput('phone', e)} }/>
-				<span> {this.state.phoneIsValid === false ? 'INVALID' : ''}</span>
-				<p>email</p>
+				<span style={ {color: 'rgb(211, 36, 33)'}}> {this.state.phoneIsValid === false ? 'Invalid Input' : ''}</span>
+				<p>Email</p>
 				<input type="email" onChange={(e)=> { handleInput('email', e)} }/>
-				<span> {this.state.emailIsValid === false ? 'INVALID' : ''}</span>
+				<span style={ {color: 'rgb(211, 36, 33)'}}> {this.state.emailIsValid === false ? 'Invalid Input' : ''}</span>
 
 				<p>"I certify (promise) that all information on this application is true and that all income is reported. I understand that this information is given in connection with the receipt of federal funds, and that school officials may verify(check) the information. I am aware that if I purposely give false information, my children may lose meal benefits, and I may be prosecuted under applicable state and Federal laws."</p>
 				<input type="checkbox" onChange={(e)=> { handleInput('certified', e)} }/>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
+import { mainStyles } from './../../styles/main'
 
 export default class Question1 extends Component {
 	constructor(props) {
@@ -11,7 +12,7 @@ export default class Question1 extends Component {
 	}
 
 	render() {
-		let question = 'Please click the add button to list the first, middle initial (if applicable), and last name of all children living in your household: (include all household members who are infants, children, and students up to and including grade 12'
+		let question = 'Please click the add button to list the first, middle initial (if applicable), and last name of all children living in your household: (include all household members who are infants, children, and students up to and including grade 12)'
 
 		let isValid = (str) => {
 			return !/[^a-zA-Z]/.test(str)
@@ -59,10 +60,21 @@ export default class Question1 extends Component {
 			this.props.onNextClick(namesArray, firstNamesArray)
 		}
 
+		let styles = {
+			addChild: {
+				background: 'rgb(191, 189, 189)',
+				border: '5px solid rgb(191, 189, 189)',
+				borderRadius: '10px',
+				width: 150,
+				height: 15,
+				padding: '5px 5px 5px 5px'
+			}
+
+		}
+
 		return (
 			<div>
-				<h6>{question}</h6>
-				<div onClick={addInputField}>Add Child</div>
+				<h6>{question}:</h6>
 				{(()=> {
 					let inputsArr = []
 					let num = this.state.numberOfChildren
@@ -71,10 +83,19 @@ export default class Question1 extends Component {
 				 		let j = i
 				 		let nameObj = this.state.namesArray[j]
 				 		inputsArr.push(<div>
-									<input onChange={(e) => updateFirstName(e, j)} type="text" />
-									<input onChange={(e) => updateMiddleInitial(e, j)} type="text" maxLength={1} />
-									<input onChange={(e) => updateLastName(e, j)} type="text" />
-									<span>{ (nameObj.firstIsValid === false || nameObj.MIisValid === false || nameObj.lastIsValid === false) ? 'INVALID' : ''}</span>
+									<input 
+										placeholder="First"
+										onChange={(e) => updateFirstName(e, j)} type="text" />
+									<input 
+										placeholder="MI"
+										style={ {width: 50}}
+										onChange={(e) => updateMiddleInitial(e, j)} type="text" maxLength={1} />
+									<input 
+										placeholder="Last"
+										onChange={(e) => updateLastName(e, j)} type="text" />
+									<span 
+										style={ mainStyles.error }
+										>{ (nameObj.firstIsValid === false || nameObj.MIisValid === false || nameObj.lastIsValid === false) ? 'Invalid Entry' : ''}</span>
 								</div>)
 				 		i++
 				 		}
@@ -83,7 +104,13 @@ export default class Question1 extends Component {
 					})()
 				}
 
-				<Link to="children/2">
+				<div 
+					onClick={addInputField}
+                    style={styles.addChild} 
+					>Add Child + </div>
+
+				<Link 
+				to="children/2">
 					<button 
 						onClick={(e)=> { handleClick(e, this.state.namesArray) } }
 						disabled={  this.state.namesArray.some( (el) => { return !el.firstIsValid || !el.MIisValid || !el.lastIsValid }) 

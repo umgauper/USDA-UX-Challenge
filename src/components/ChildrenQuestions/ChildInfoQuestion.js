@@ -39,10 +39,10 @@ export default class ChildInfoQuestion extends Component {
 
 		return (
 			<div>
-				<h5>{heading}</h5>
+				<h5>{heading}:</h5>
 				{this.props.names.map((el, i)=> {
 					return (<div style={  this.state.indexOfActive === i ? {display: 'block'} : {display: 'none'}} >
-								<h6>{question(el)}</h6>
+								<p>{question(el)}</p>
 								<Link to={nextPath === 7 ? "assistance" : "children/" + nextPath} onClick={ (e) => { onYesClick(e, i) } }>
 									<button>Yes</button>
 								</Link>

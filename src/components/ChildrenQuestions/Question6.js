@@ -11,9 +11,9 @@ export default class Question6 extends Component {
 	}
 
 	render() {
-		let heading = 'For each child, please indicate if he/she is a Head Start participant:'
+		let heading = 'For each child, please indicate if he/she is a Head Start participant'
 		let question = (name) => {
-			return `Is ${name} a Head Start participant?`
+			return <p>Is <b>{name}</b> a Head Start participant?</p>
 		}
 		
 

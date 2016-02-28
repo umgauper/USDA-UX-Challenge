@@ -7,11 +7,15 @@ export default class App extends Component {
   }
 
   render() {
+
+    let styles = {
+      mainDiv: {
+        margin: '4% 20% 0% 10%',
+      }
+    }
     return (
-      <div>
-       <h1>Main App</h1>
+      <div style={styles.mainDiv}>
        <Link to="children">Children</Link>
-   
        <Link to="assistance">Assistance</Link>
        <Link to="childIncome">Child Income</Link>
        <Link to="adultIncome">Adult Income</Link>

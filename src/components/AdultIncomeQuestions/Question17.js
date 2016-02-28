@@ -11,7 +11,7 @@ export default class Question17 extends Component {
 	}
 
 	render() {
-		let question = 'Please enter the last 4 digits of Social Security Number (SSN) of Primary Wage Earner or Other Adult Household Member.'
+		let question = 'Please enter the last 4 digits of Social Security Number (SSN) of the Primary Wage Earner or Other Adult Household Member.'
 		let nextClickHandler = () => {
 			this.props.onNextClick(this.state)
 		}
@@ -25,12 +25,15 @@ export default class Question17 extends Component {
 
 		return (
 			<div>
-				<h6>{question}</h6>
+				<p>{question}</p>
 				<input 
 					onChange={(e) => { handleInput(e) }}
 					type="text"
 					maxLength={4}/>
-				<span>{ this.state.isValid ? '' : 'INVALID INPUT'}</span>
+				<div><span
+					style={ {color: 'rgb(211, 36, 33)'}}
+				>{ this.state.isValid ? '' : 'Invalid Input'}</span>
+				</div>
 				<Link to="contact">
 				<button 
 					disabled={ !this.state.isValid || this.state.SSN === null || this.state.SSN.length < 4  }

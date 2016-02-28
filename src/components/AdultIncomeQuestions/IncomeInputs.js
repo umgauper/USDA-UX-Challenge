@@ -26,15 +26,32 @@ export default class IncomeInputs extends Component {
 						let i = 0
 					 	while (i < num) {
 					 		let j = i
-					 		inputsArr.push(<div><OptionsList 
+					 		inputsArr.push(<div>
+					 							<p>Type of Income: </p>
+					 							<OptionsList 
 					 								optionClickHandler={optionClickHandler}
 					 								index={j}
 					 								options={options}/>
+			 								<p>Amount: </p>
+			 								<span>$</span><input type="text" name="amt" onChange={(e) => {inputChangeHandler(e, j)}}/>
+			 								<p>Frequency: </p>
+			 								<div>
 								 			<input type="radio" value="weekly" name={name + j} onClick={(e) => {radioClickHandler(e, j)}}/>
+								 			<span>Once a week</span>
+								 			</div>
+								 			<div>
 											<input type="radio" value="twiceweekly" name={name + j} onClick={(e) => {radioClickHandler(e, j)}}/>
+											<span>Twice a week</span>
+											</div>
+											<div>
 											<input type="radio" value="monthly" name={name + j} onClick={(e) => {radioClickHandler(e, j)}}/>
+											<span>Once a month</span>
+											</div>
+											<div>
 											<input type="radio" value="twicemonthly" name={name + j} onClick={(e) => {radioClickHandler(e, j)}}/>
-											<input type="text" name="amt" onChange={(e) => {inputChangeHandler(e, j)}}/>
+											<span>Twice a month</span>
+											</div>
+											
 											<span>{ this.props.validities[j] === false ? 'WRONG' : ''}</span>
 				 						   </div>)
 				 			i++

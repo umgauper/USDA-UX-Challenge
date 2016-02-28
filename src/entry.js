@@ -24,6 +24,7 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import usdaApp from './reducers'
 import { addChildNames, updateChildInfo, addAdultNames, updateAdultInfo, updateContactInfo, updateSSN } from './actions'
+import Start from './components/Start'
 
 let store = createStore(usdaApp)
 
@@ -43,6 +44,7 @@ render(
 	<Provider store={store}>
 		<Router history={browserHistory}>
 			<Route path="/" component={App}>
+				<IndexRoute component={Start}/>
 				<Route path="children" component={Children}>
 					<Route path="1" component={Question1Container}/>
 					<Route path="2" component={Question2}/>

@@ -11,9 +11,9 @@ export default class Question5 extends Component {
 	}
 
 	render() {
-		let heading = 'For each child, please indicate if he/she is homeless, a migrant, or a runaway:'
+		let heading = 'For each child, please indicate if he/she is homeless, a migrant, or a runaway'
 		let question = (name) => {
-			return `Is ${name} homeless, a migrant, or a runaway?`
+			return <p>Is <b>{name}</b> homeless, a migrant, or a runaway?</p>
 		}
 
 		return (<ChildInfoQuestion 

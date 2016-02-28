@@ -84,12 +84,13 @@ export default class AdultIncomeQuestion extends Component {
 
 		}
 
+
 		let numberOfNames = this.props.numberOfNames
 		let nextPath = Number.parseInt(window.location.hash.match(/adultIncome\/?([0-9]+)/)[1]) + 1
 
 		return (
 			<div style={ i === this.props.activeIndex ? {display: 'block'} : {display: 'none'} }>
-				<h6>{question(name)}</h6>
+				<div>{question(name)}</div>
 				<button onClick={ () => {this.setState({showInput: true}) } }>Yes</button>
 				<Link to={"adultIncome/" + nextPath} onClick={ (e) => {noClickHandler(e)} }>
 					<button>No</button>

@@ -25,7 +25,7 @@ class IncomeInput extends Component {
 			this.setState({showErrorMessage: !isValid})
 		}
 
-		let errorMessage = 'WRONG'
+		let errorMessage = 'Invalid Entry'
 
 		let yesClickHandler = () => {
 			this.setState({showInput: true})
@@ -77,11 +77,28 @@ class IncomeInput extends Component {
 					<button>No</button>
 				</Link>
 				<div style={ this.state.showInput ? {display: 'block'} : {display: 'none'}}>
-					<p>Please enter the dollar amount of the money received and select the frequency of the amount</p>
+					<p>Please enter the dollar amount of the money received and select the frequency of the amount:</p>
+						<p>Amount:</p>
+						<span>$</span><input type="text" name="amt" onChange={(e) => inputChangeHandler(e)}/>
+						<span style={this.state.showErrorMessage ? {display: 'block', color: 'rgb(211, 36, 33)'} : {display: 'none'}}>{errorMessage}</span>
+						<div>
+						<p>Frequency:</p>
 						<input type="radio" value="weekly" name={i} onClick={(e) => {radioClickHandler(e)}}/>
+						<span>Once a week</span>
+						</div>
+						<div>
 						<input type="radio" value="twiceweekly" name={i} onClick={(e) => {radioClickHandler(e)}}/>
-						<input type="radio" value="monthly" name={i} onClick={(e) => {radioClickHandler(e)}}/>
+						<span>Twice a week</span>
+						</div>
+						<div>
 						<input type="radio" value="twicemonthly" name={i} onClick={(e) => {radioClickHandler(e)}}/>
+						<span>Twice a month</span>
+						</div>
+						<div>
+						<input type="radio" value="monthly" name={i} onClick={(e) => {radioClickHandler(e)}}/>
+						<span>Once a month</span>
+						</div>
+						
 						<Link 
 							to={nextPath === 12 ? "adultIncome/12" : "childIncome/" + nextPath}
 							onClick={ (e) => {nextClickHandler(e, i)} }
@@ -91,8 +108,8 @@ class IncomeInput extends Component {
 							>NEXT
 						</button>
 						</Link>
-					<input type="text" name="amt" onChange={(e) => inputChangeHandler(e)}/>
-					<span style={this.state.showErrorMessage ? {display: 'block'} : {display: 'none'}}>{errorMessage}</span>
+					
+					
 				</div>		
 				
 			</div>

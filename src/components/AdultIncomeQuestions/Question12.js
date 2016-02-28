@@ -49,10 +49,22 @@ export default class Question12 extends Component {
 			this.props.onQuestion12NextClick(namesArray, firstNamesArray)
 		}
 
+
+		let styles = {
+			addAdult: {
+				background: 'rgb(191, 189, 189)',
+				border: '5px solid rgb(191, 189, 189)',
+				borderRadius: '10px',
+				width: 150,
+				height: 15,
+				padding: '5px 5px 5px 5px'
+			}
+		}
+
 		return (
 			<div>
 				<h6>{question}</h6>
-				<div onClick={addInputField}>Add Adult</div>
+			
 				{(()=> {
 					let inputsArr = []
 					let num = this.state.numberOfAdults
@@ -61,9 +73,15 @@ export default class Question12 extends Component {
 				 		let j = i
 				 		let nameObj = this.state.namesArray[j]
 				 		inputsArr.push(<div>
-									<input onChange={(e) => updateFirstNames(e, j)} type="text" />
-									<input onChange={(e) => updateLastName(e, j)} type="text" />
-									<span>{ (nameObj.firstIsValid === false || nameObj.lastIsValid === false) ? 'INVALID' : ''}</span>
+									<input 
+										placeholder="First"
+										onChange={(e) => updateFirstNames(e, j)} type="text" />
+									<input
+										placeholder="Last" 
+										onChange={(e) => updateLastName(e, j)} type="text" />
+									<span
+										style={ { color: 'rgb(211, 36, 33)'}}
+										>{ (nameObj.firstIsValid === false || nameObj.lastIsValid === false) ? 'Invalid Entry' : ''}</span>
 								</div>)
 				 		i++
 				 		}
@@ -71,6 +89,9 @@ export default class Question12 extends Component {
 				 	
 					})()
 				}
+				<div
+				style={styles.addAdult} 
+				onClick={addInputField}>Add Adult + </div>
 
 				<Link to="adultIncome/13">
 					<button 

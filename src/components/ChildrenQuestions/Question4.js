@@ -11,9 +11,9 @@ export default class Question4 extends Component {
 	}
 	
 	render() {
-		let heading = 'For each child, please indicate if he/she is a foster child:';
+		let heading = 'For each child, please indicate if he/she is a foster child';
 		let question = (name) => {
-			return `Is ${name} a foster child?`
+			return <p>Is <b>{name}</b> a foster child?</p>
 		}
 
 		return (<ChildInfoQuestion 

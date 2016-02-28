@@ -13,7 +13,7 @@ export default class Question3 extends Component {
 	render() {
 		let heading = 'For each child, please indicate if he/she is a student at Wheatland Elementary'
 		let question = (name) => {
-			return `Is ${name} a student at Wheatland Elementary?`
+			return <p>Is <b>{name}</b> a student at Wheatland Elementary?</p>
 		}
 
 		return (<ChildInfoQuestion 

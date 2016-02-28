@@ -11,7 +11,7 @@ export const Question13 = class extends Component {
 
 	render() {
 		let question = (name) => {
-			return `Does ${name} receive earnings from work such as salary, wages, cash bonuses, net income from self-employment (farm income, partnership income, professional practice income, or other), strike benefits, unemployment insurance, or any other earned income?`
+			return <p>Does <b>{name}</b> receive earnings from work such as salary, wages, cash bonuses, net income from self-employment (farm income, partnership income, professional practice income, or other), strike benefits, unemployment insurance, or any other earned income?</p>
 		}
 
 		let names = this.props.names
@@ -43,7 +43,7 @@ export const Question14 = class extends Component {
 
 	render() {
 		let question = (name) => {
-			return `Is ${name} in the U.S. military and does ${name} receive military basic pay or cash bonuses, or military allowances for off-base housing, food or clothing?  [Do NOT re port combat pay, FSSA or  privatized housing allowances`
+			return <p>Is <b>{name}</b> in the U.S. military and does <b>{name}</b> receive military basic pay or cash bonuses, or military allowances for off-base housing, food or clothing?  (Do NOT report combat pay, FSSA or  privatized housing allowances)</p>
 		}
 
 		let names = this.props.names
@@ -73,12 +73,12 @@ export const Question15 = class extends Component {
 
 	render() {
 		let question = (name) => {
-			return `Does ${name} receive retirement or disability income such as, but not limited to Social Security, railroad retirement, pensions, annuities, survivor’s benefits, disability benefits from Supplemental Security Income (SSI), private disability benefits, black lung benefits, worker’s compensation, veteran’s benefits, or related sources?`
+			return <p>Does <b>{name}</b> receive retirement or disability income such as, but not limited to Social Security, railroad retirement, pensions, annuities, survivor’s benefits, disability benefits from Supplemental Security Income (SSI), private disability benefits, black lung benefits, worker’s compensation, veteran’s benefits, or related sources?</p>
 		}
 
 		let names = this.props.names
 	
-		let options = ['Social Security', 'railroad retirement', 'pensions', 'SSI', 'private disability benefits', 'black lung benefits', 'worker’s compensation', 'veteran’s benefits', 'related sources?']
+		let options = ['Social Security', 'railroad retirement', 'pensions', 'SSI', 'private disability benefits', 'black lung benefits', 'worker’s compensation', 'veteran’s benefits', 'related sources']
 
 		return (<div> {names.map( (name, i)=> {
 			return (<AdultIncomeQuestion 
@@ -105,12 +105,12 @@ export const Question16 = class extends Component {
 
 	render() {
 		let question = (name) => {
-			return `Does ${name} receive income from investments or any other source?`
+			return <p>Does <b>{name}</b> receive income from investments or any other source?</p>
 		}
 
 		let names = this.props.names
 
-		let options =  ['interest, dividends, income from trusts or estates', 'rental income', 'royalties', 'prize winnings', 'money withdrawn from savings', 'regular contributions such as cash gifts from friends or family outside the household]', 'strike benefits', 'unemployment insurance', 'other']
+		let options =  ['interest, dividends, income from trusts or estates', 'rental income', 'royalties', 'prize winnings', 'money withdrawn from savings', 'regular contributions such as cash gifts from friends or family outside the household', 'strike benefits', 'unemployment insurance', 'other']
 	
 
 		return (<div> {names.map( (name, i)=> {
