@@ -14,3 +14,8 @@ app.use(express.static(static_path))
     if (err) { console.log(err) };
     console.log('Listening at localhost:8080');
   });
+
+app.post('/', function(req, res) {
+	res.send('POST requested')
+})
+

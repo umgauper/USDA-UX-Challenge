@@ -76,7 +76,7 @@ export default class Confirm extends Component {
 
 		let postJSON = () => {
 			console.log('data posted')
-			jquery.post('http://localhost:3000/', info, () => {
+			jquery.post('https://protected-waters-45009.herokuapp.com/', info, () => {
 				alert('Form submitted!')				
 			})
 		}
