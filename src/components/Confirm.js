@@ -69,7 +69,6 @@ export default class Confirm extends Component {
 					<div> 
 						<p><b>{el.first}</b></p>
 						{arr}
-
 						</div>
 				)
 

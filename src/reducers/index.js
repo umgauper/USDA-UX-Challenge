@@ -26,10 +26,10 @@ const appState = (state = initialState, action) => {
 		case ADD_CHILD_NAMES:
 			return update(state, {
 				namesArray: { 
-					$set: Array.concat(state.namesArray, action.namesArray) 
+					$set: Array.prototype.concat(state.namesArray, action.namesArray) 
 				},
 				firstNamesArray: { 
-					$set: Array.concat(state.firstNamesArray, action.firstNamesArray) 
+					$set: Array.prototype.concat(state.firstNamesArray, action.firstNamesArray) 
 				}
 			})
 
@@ -45,10 +45,10 @@ const appState = (state = initialState, action) => {
 		case ADD_ADULT_NAMES: 
 			return update(state, {
 				adultNamesArray: { 
-					$set: Array.concat(state.adultNamesArray, action.namesArray) 
+					$set: Array.prototype.concat(state.adultNamesArray, action.namesArray) 
 				},
 				adultFirstNamesArray: { 
-					$set: Array.concat(state.adultFirstNamesArray, action.firstNamesArray) 
+					$set: Array.prototype.concat(state.adultFirstNamesArray, action.firstNamesArray) 
 				}
 			})
 
