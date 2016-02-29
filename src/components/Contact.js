@@ -73,12 +73,12 @@ export default class Contact extends Component { //TODO: finish this part so nex
 
 			switch (property) {
 				case 'aptNumber': 
-					let isAptValid = !/[^0-9]/.test(e.target.value)
+					let isAptValid = !/[^0-9A-Za-z\.\#\s]/.test(e.target.value)
 					this.setState({aptIsValid: isAptValid})
 					updateFormValidity()
 					return
 				case 'city':
-					let isCityValid = !/[^a-zA-Z]/.test(e.target.value)
+					let isCityValid = !/[^a-zA-Z\s]/.test(e.target.value)
 					this.setState({cityIsValid: isCityValid})
 					updateFormValidity()
 					return
@@ -88,12 +88,12 @@ export default class Contact extends Component { //TODO: finish this part so nex
 					updateFormValidity()
 					return
 				case 'zip':
-					let isZipValid = !/[^0-9]/.test(e.target.value)
+					let isZipValid = !/[^0-9\-]/.test(e.target.value)
 					this.setState({zipIsValid: isZipValid})
 					updateFormValidity()
 					return
 				case 'name':
-					let isNameValid = !/[^a-zA-Z]/.test(e.target.value)
+					let isNameValid = !/[^a-zA-Z\s\.\-]/.test(e.target.value)
 					this.setState({nameIsValid: isNameValid})
 					updateFormValidity()
 					return
