@@ -146,10 +146,9 @@ export default class Contact extends Component { //TODO: finish this part so nex
 				<input type="checkbox" onChange={(e)=> { handleInput('certified', e)} }/>
 				<Link
 					to="confirm"
-					onClick={(e) => {nextClickHandler(e) }}>
-				>
+					onClick={ (e) => { nextClickHandler(e) } }>
 				<button 
-					disabled= { !this.state.formIsValid } 
+					disabled= { !this.state.formIsValid }> 
 				NEXT</button>	
 				</Link>
 			</div>
