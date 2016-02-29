@@ -15,12 +15,6 @@ export default class App extends Component {
     }
     return (
       <div style={styles.mainDiv}>
-       <Link to="children">Children</Link>
-       <Link to="assistance">Assistance</Link>
-       <Link to="childIncome">Child Income</Link>
-       <Link to="adultIncome">Adult Income</Link>
-       <Link to="contact">Contact Information</Link>
-       <Link to="confirm">CONFIRM</Link>
        {this.props.children}
       </div>
     );

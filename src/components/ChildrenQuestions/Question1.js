@@ -52,7 +52,6 @@ export default class Question1 extends Component {
 
 		let handleClick = (e, namesArray) => {
 			e.stopPropagation()
-			alert("fiiiring")
 			let firstNamesArray = namesArray.map( (el) => { 	//TODO: It might be better to move firstNamesArray creation into the action creator?
 																//so calling the addChildNames dispatch from somewhere else doesn't mess up the name index mapping
 				return el.first

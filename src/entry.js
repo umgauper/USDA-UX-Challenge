@@ -28,17 +28,6 @@ import Start from './components/Start'
 
 let store = createStore(usdaApp)
 
-store.dispatch(addChildNames([{first: "Una", MI: "M", last: "Gauper"}, {first: "Orrin", MI: "A", last: "Gauper"}], ["Una", "Orrin"]))
-store.dispatch(updateChildInfo({wages: {frequency: "weekly", amt: 1000}}, 1))
-store.dispatch(updateChildInfo({spendingMoney: {frequency: "weekly", amt: 1000}}, 0))
-store.dispatch(updateChildInfo({salary: {frequency: "weekly", amt: 1000}}, 0))
-store.dispatch(updateChildInfo({isStudent: false}, 0))
-store.dispatch(updateChildInfo({isStudent: true}, 1))
-store.dispatch(updateChildInfo({isMigrant: false}, 0))
-store.dispatch(updateChildInfo({isMigrant: false}, 1))
-store.dispatch(updateChildInfo({isHeadStart: false}, 0))
-store.dispatch(updateChildInfo({isHeadStart: false}, 1))
-store.dispatch(addAdultNames([{first: "bob", last: "gauper"}, {first: "maree", last: "gauper"}], ["Bob", "Maree"] ))
 
 render(
 	<Provider store={store}>

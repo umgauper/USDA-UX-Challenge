@@ -52,7 +52,7 @@ export default class IncomeInputs extends Component {
 											<span>Twice a month</span>
 											</div>
 											
-											<span>{ this.props.validities[j] === false ? 'WRONG' : ''}</span>
+											<span style={{color: 'rgb(220, 36, 33)'}}>{ this.props.validities[j] === false ? 'Invalid Entry' : ''}</span>
 				 						   </div>)
 				 			i++
 					 		}

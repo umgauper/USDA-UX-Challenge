@@ -11,7 +11,6 @@ export default class Assistance extends Component {
 			<div> 
 				<h3>Assistance Section </h3>
 				{this.props.children}
-				<Link to="assistance/7">7</Link>
 			</div>
 			)
 	}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router'
 import update from 'react-addons-update'
 
 export default class Contact extends Component { //TODO: finish this part so next click sends updated state! (add onChange handlers to inputs!)
@@ -27,8 +28,7 @@ export default class Contact extends Component { //TODO: finish this part so nex
 	}
 
 	render() {
-		let nextClickHandler = () => {
-			console.log(this.state)
+		let nextClickHandler = (e) => {
 			this.props.onContactNextClick(this.state)
 		}
 
@@ -144,11 +144,14 @@ export default class Contact extends Component { //TODO: finish this part so nex
 
 				<p>"I certify (promise) that all information on this application is true and that all income is reported. I understand that this information is given in connection with the receipt of federal funds, and that school officials may verify(check) the information. I am aware that if I purposely give false information, my children may lose meal benefits, and I may be prosecuted under applicable state and Federal laws."</p>
 				<input type="checkbox" onChange={(e)=> { handleInput('certified', e)} }/>
+				<Link
+					to="confirm"
+					onClick={(e) => {nextClickHandler(e) }}>
+				>
 				<button 
 					disabled= { !this.state.formIsValid } 
-					onClick={nextClickHandler}>
-
 				NEXT</button>	
+				</Link>
 			</div>
 			)
 	}
