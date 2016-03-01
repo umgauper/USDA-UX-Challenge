@@ -57,7 +57,7 @@ export default class Confirm extends Component {
 		let adultIncomes = adultNamesArray.map( (el) => {
 			var arr = []
 			for (var prop in el) {
-				if (el.hasOwnProperty(prop) && prop !== 'first' && prop !== 'last') {
+				if (el.hasOwnProperty(prop) && prop !== 'first' && prop !== 'last' && prop !== 'firstIsValid' &&  prop !== 'lastIsValid') {
 					arr.push( <div><p>{prop}: {el[prop].frequency} x ${el[prop].amt}</p>
 								</div>
 						)
@@ -75,7 +75,6 @@ export default class Confirm extends Component {
 		})
 
 		let postJSON = () => {
-			console.log('data posted')
 			jquery.post('https://protected-waters-45009.herokuapp.com/', info, () => {
 				alert('Form submitted!')				
 			})
