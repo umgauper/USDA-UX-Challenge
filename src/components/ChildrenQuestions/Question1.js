@@ -113,7 +113,7 @@ export default class Question1 extends Component {
 					<button 
 						onClick={(e)=> { handleClick(e, this.state.namesArray) } }
 						disabled={  this.state.namesArray.some( (el) => { return !el.firstIsValid || !el.MIisValid || !el.lastIsValid }) 
-									|| this.state.namesArray.some( (el) => { return el.first === '' || el.MI === '' || el.last === ''})
+									|| this.state.namesArray.some( (el) => { return el.first === '' || el.last === ''})
 					}
 						>
 						NEXT
