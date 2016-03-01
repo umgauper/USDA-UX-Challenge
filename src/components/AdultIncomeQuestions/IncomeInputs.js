@@ -17,6 +17,17 @@ export default class IncomeInputs extends Component {
 		let radioClickHandler = this.props.radioClickHandler
 		let inputChangeHandler = this.props.inputChangeHandler
 		let optionClickHandler = this.props.optionClickHandler
+		let styles = {
+			addIncomeSource: {
+				background: 'rgb(191, 189, 189)',
+				border: '5px solid rgb(191, 189, 189)',
+				borderRadius: '10px',
+				width: 150,
+				height: 15,
+				padding: '5px 5px 5px 5px'
+			}
+
+		}
 
 		return (<div style={this.props.show ? {display: 'block'} : {display: 'none'} }> 
 			 		{( () => {
@@ -59,7 +70,9 @@ export default class IncomeInputs extends Component {
 					 	return inputsArr
 					 	})()
 					 }
-			<button onClick={this.props.addIncomeSource}>Add Income Source </button>		
+			<button 
+				style={styles.addIncomeSource}
+				onClick={this.props.addIncomeSource}>Add Income Source </button>		
 
 			</div>)
 	}
