@@ -22,8 +22,8 @@ export default class IncomeInputs extends Component {
 				background: 'rgb(191, 189, 189)',
 				border: '5px solid rgb(191, 189, 189)',
 				borderRadius: '10px',
-				width: 150,
-				height: 15,
+				width: 200,
+				height: 40,
 				padding: '5px 5px 5px 5px'
 			}
 
